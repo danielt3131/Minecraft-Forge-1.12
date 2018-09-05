@@ -1,0 +1,24 @@
+{
+    "type": "minecraft:crafting_shaped",
+
+    "pattern":
+    [
+        "A"
+    ],
+
+    "key":
+    {
+        "A":
+        {
+            "item": "lsutigers3131:ruby_block"
+        }
+
+
+    },
+
+    "result":
+    {
+        "item": "lsutigers3131:ruby",
+        "count": 9
+    }
+}

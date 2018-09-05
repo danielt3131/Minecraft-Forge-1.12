@@ -1,0 +1,29 @@
+package com.LSUtigers3131.mod.items.tools;
+
+import java.util.Set;
+
+import com.LSUtigers3131.mod.Main;
+import com.LSUtigers3131.mod.items.IHasModel;
+import com.LSUtigers3131.mod.items.ModItems;
+
+import net.minecraft.block.Block;
+import net.minecraft.item.ItemTool;
+
+public class ToolPickaxe extends ItemTool implements IHasModel
+{
+	public ToolPickaxe(String name, ToolMaterial material)
+	{
+		super(material);
+		setUnlocalizedName(name);
+		setRegistryName(name);
+		setCreativeTab(Main.daniel);
+		
+		ModItems.ITEMS.add(this);
+	}
+	
+	@Override
+	public void registerModels() 
+	{
+		Main.proxy.registerItemRenderer(this, 0, "inventory");
+	}
+}

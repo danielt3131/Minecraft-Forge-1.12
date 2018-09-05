@@ -1,0 +1,20 @@
+package com.LSUtigers3131.mod.blocks;
+
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
+import net.minecraft.creativetab.CreativeTabs;
+
+public class BlockLightBlock extends Block {
+
+	public BlockLightBlock(Material material) {
+		super(Material.IRON);
+
+		setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
+		setLightLevel(15);
+		setHardness(50);
+		setUnlocalizedName("light");
+		setRegistryName("light");
+		
+	}
+
+}

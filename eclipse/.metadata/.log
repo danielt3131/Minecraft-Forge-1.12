@@ -1,0 +1,250 @@
+!SESSION 2018-03-09 18:39:55.016 -----------------------------------------------
+eclipse.buildId=4.6.3.M20170301-0400
+java.version=1.8.0_131
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product -keyring /Users/daniel/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.java.product -keyring /Users/daniel/.eclipse_keyring
+
+!ENTRY org.eclipse.core.net 1 0 2018-03-09 18:40:37.585
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2018-03-09 19:34:15.444
+!MESSAGE Internal Error
+!STACK 0
+java.lang.Exception: Illegal ASTNode positions: previousEnd=685, childStart=684, element==MDKExample/\/Users\/daniel\/.gradle\/caches\/minecraft\/net\/minecraftforge\/forge\/1.12.2-14.23.2.2611\/snapshot\/20171003\/forgeSrc-1.12.2-14.23.2.2611.jar<net.minecraftforge.fml.common(Mod.class[Mod, Javadoc:
+/**
+ * This defines a Mod to FML.
+ * Any class found with this annotation applied will be loaded as a Mod. The instance that is loaded will
+ * represent the mod to other Mods in the system. It will be sent various subclasses of {@link FMLEvent}
+ * at pre-defined times during the loading of the game, based on where you have applied the {@link EventHandler}
+ * annotation.
+ *
+ * <p>This is a simple example of a Mod. It has the modId of "mymodid", the name of "My example mod", it is
+ * version 1.0, and depends on FML being loaded.
+ * <pre>{@code
+ * package mymod;
+ * // Declare that this is a mod with modId "mymodid", name "My example mod", version "1.0" and dependency on FML.
+ * {@literal @}Mod(modId="mymodid",name="My example mod",version="1.0",dependencies="required-after:FML")
+ * public class MyMod {
+ *      // Populate this field with the instance of the mod created by FML
+ *      {@literal @}Instance("mymodid")
+ *      public MyMod instance;
+ *
+ *      // Mark this method for receiving an {@link FMLEvent} (in this case, it's the {@link FMLPreInitializationEvent})
+ *      {@literal @}EventHandler public void preInit(FMLPreInitializationEvent event)
+ *      {
+ *          // Do stuff in pre-init phase (read config, create blocks and items, register them)
+ *      }
+ * }
+ * }
+ * </pre>
+ *
+ * @author cpw
+ *
+ */
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.handleContentElements(JavadocContentAccess2.java:1370)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.handleContentElements(JavadocContentAccess2.java:1358)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.elementToHTML(JavadocContentAccess2.java:1021)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.toHTML(JavadocContentAccess2.java:866)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.javadoc2HTML(JavadocContentAccess2.java:786)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContentFromSource(JavadocContentAccess2.java:671)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:534)
+	at org.eclipse.jdt.internal.ui.text.java.ProposalInfo.extractJavadoc(ProposalInfo.java:90)
+	at org.eclipse.jdt.internal.ui.text.java.ProposalInfo.computeInfo(ProposalInfo.java:75)
+	at org.eclipse.jdt.internal.ui.text.java.ProposalInfo.getInfo(ProposalInfo.java:60)
+	at org.eclipse.jdt.internal.ui.text.java.AbstractJavaCompletionProposal.getAdditionalProposalInfo(AbstractJavaCompletionProposal.java:602)
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController$Timer$2$1.run(AdditionalInfoController.java:113)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.debug.core 4 120 2018-03-09 20:48:39.883
+!MESSAGE Variable references empty selection: ${project_loc}
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2018-03-09 21:21:42.356
+!MESSAGE Internal Error
+!STACK 0
+java.lang.Exception: Illegal ASTNode positions: previousEnd=685, childStart=684, element==MDKExample/\/Users\/daniel\/.gradle\/caches\/minecraft\/net\/minecraftforge\/forge\/1.12.2-14.23.2.2611\/snapshot\/20171003\/forgeSrc-1.12.2-14.23.2.2611.jar<net.minecraftforge.fml.common(Mod.class[Mod, Javadoc:
+/**
+ * This defines a Mod to FML.
+ * Any class found with this annotation applied will be loaded as a Mod. The instance that is loaded will
+ * represent the mod to other Mods in the system. It will be sent various subclasses of {@link FMLEvent}
+ * at pre-defined times during the loading of the game, based on where you have applied the {@link EventHandler}
+ * annotation.
+ *
+ * <p>This is a simple example of a Mod. It has the modId of "mymodid", the name of "My example mod", it is
+ * version 1.0, and depends on FML being loaded.
+ * <pre>{@code
+ * package mymod;
+ * // Declare that this is a mod with modId "mymodid", name "My example mod", version "1.0" and dependency on FML.
+ * {@literal @}Mod(modId="mymodid",name="My example mod",version="1.0",dependencies="required-after:FML")
+ * public class MyMod {
+ *      // Populate this field with the instance of the mod created by FML
+ *      {@literal @}Instance("mymodid")
+ *      public MyMod instance;
+ *
+ *      // Mark this method for receiving an {@link FMLEvent} (in this case, it's the {@link FMLPreInitializationEvent})
+ *      {@literal @}EventHandler public void preInit(FMLPreInitializationEvent event)
+ *      {
+ *          // Do stuff in pre-init phase (read config, create blocks and items, register them)
+ *      }
+ * }
+ * }
+ * </pre>
+ *
+ * @author cpw
+ *
+ */
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.handleContentElements(JavadocContentAccess2.java:1370)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.handleContentElements(JavadocContentAccess2.java:1358)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.elementToHTML(JavadocContentAccess2.java:1021)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.toHTML(JavadocContentAccess2.java:866)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.javadoc2HTML(JavadocContentAccess2.java:786)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContentFromSource(JavadocContentAccess2.java:671)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:534)
+	at org.eclipse.jdt.internal.ui.text.java.ProposalInfo.extractJavadoc(ProposalInfo.java:90)
+	at org.eclipse.jdt.internal.ui.text.java.ProposalInfo.computeInfo(ProposalInfo.java:75)
+	at org.eclipse.jdt.internal.ui.text.java.ProposalInfo.getInfo(ProposalInfo.java:60)
+	at org.eclipse.jdt.internal.ui.text.java.AbstractJavaCompletionProposal.getAdditionalProposalInfo(AbstractJavaCompletionProposal.java:602)
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController$Timer$2$1.run(AdditionalInfoController.java:113)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.debug.core 4 120 2018-03-09 21:49:44.275
+!MESSAGE Variable references empty selection: ${project_loc}
+
+!ENTRY org.eclipse.debug.core 4 120 2018-03-09 21:49:51.791
+!MESSAGE Variable references empty selection: ${project_loc}
+
+!ENTRY org.eclipse.debug.core 4 120 2018-03-09 21:50:13.726
+!MESSAGE Variable references empty selection: ${project_loc}
+!SESSION 2018-03-09 21:51:00.913 -----------------------------------------------
+eclipse.buildId=4.6.3.M20170301-0400
+java.version=1.8.0_131
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product -keyring /Users/daniel/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.java.product -keyring /Users/daniel/.eclipse_keyring
+
+!ENTRY org.eclipse.core.net 1 0 2018-03-09 21:51:17.457
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.debug.core 4 120 2018-03-09 21:51:43.254
+!MESSAGE Variable references empty selection: ${project_loc}
+
+!ENTRY org.eclipse.debug.core 4 120 2018-03-09 21:59:00.164
+!MESSAGE Variable references empty selection: ${project_loc}
+
+!ENTRY org.eclipse.debug.core 4 120 2018-03-09 21:59:14.984
+!MESSAGE Variable references empty selection: ${project_loc}
+
+!ENTRY org.eclipse.debug.core 4 120 2018-03-09 21:59:22.242
+!MESSAGE Variable references empty selection: ${project_loc}
+
+!ENTRY org.eclipse.debug.core 4 120 2018-03-09 21:59:45.213
+!MESSAGE Variable references empty selection: ${project_loc}
+
+!ENTRY org.eclipse.debug.core 4 120 2018-03-09 21:59:49.356
+!MESSAGE Variable references empty selection: ${project_loc}
+
+!ENTRY org.eclipse.debug.core 4 120 2018-03-09 21:59:52.800
+!MESSAGE Variable references empty selection: ${project_loc}
+!SESSION 2018-03-09 22:01:13.858 -----------------------------------------------
+eclipse.buildId=4.6.3.M20170301-0400
+java.version=1.8.0_131
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product -keyring /Users/daniel/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.java.product -keyring /Users/daniel/.eclipse_keyring
+
+!ENTRY org.eclipse.core.net 1 0 2018-03-09 22:01:30.434
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.debug.core 4 120 2018-03-09 22:01:55.237
+!MESSAGE Variable references empty selection: ${project_loc}
+
+!ENTRY org.eclipse.debug.core 4 120 2018-03-09 22:02:02.387
+!MESSAGE Variable references empty selection: ${project_loc}
+!SESSION 2018-03-10 07:53:53.116 -----------------------------------------------
+eclipse.buildId=4.6.3.M20170301-0400
+java.version=1.8.0_131
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product -keyring /Users/daniel/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.java.product -keyring /Users/daniel/.eclipse_keyring
+
+!ENTRY org.eclipse.core.net 1 0 2018-03-10 07:54:10.426
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2018-03-10 09:59:02.360
+!MESSAGE Internal Error
+!STACK 0
+java.lang.Exception: Illegal ASTNode positions: previousEnd=685, childStart=684, element==MDKExample/\/Users\/daniel\/.gradle\/caches\/minecraft\/net\/minecraftforge\/forge\/1.12.2-14.23.2.2611\/snapshot\/20171003\/forgeSrc-1.12.2-14.23.2.2611.jar<net.minecraftforge.fml.common(Mod.class[Mod, Javadoc:
+/**
+ * This defines a Mod to FML.
+ * Any class found with this annotation applied will be loaded as a Mod. The instance that is loaded will
+ * represent the mod to other Mods in the system. It will be sent various subclasses of {@link FMLEvent}
+ * at pre-defined times during the loading of the game, based on where you have applied the {@link EventHandler}
+ * annotation.
+ *
+ * <p>This is a simple example of a Mod. It has the modId of "mymodid", the name of "My example mod", it is
+ * version 1.0, and depends on FML being loaded.
+ * <pre>{@code
+ * package mymod;
+ * // Declare that this is a mod with modId "mymodid", name "My example mod", version "1.0" and dependency on FML.
+ * {@literal @}Mod(modId="mymodid",name="My example mod",version="1.0",dependencies="required-after:FML")
+ * public class MyMod {
+ *      // Populate this field with the instance of the mod created by FML
+ *      {@literal @}Instance("mymodid")
+ *      public MyMod instance;
+ *
+ *      // Mark this method for receiving an {@link FMLEvent} (in this case, it's the {@link FMLPreInitializationEvent})
+ *      {@literal @}EventHandler public void preInit(FMLPreInitializationEvent event)
+ *      {
+ *          // Do stuff in pre-init phase (read config, create blocks and items, register them)
+ *      }
+ * }
+ * }
+ * </pre>
+ *
+ * @author cpw
+ *
+ */
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.handleContentElements(JavadocContentAccess2.java:1370)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.handleContentElements(JavadocContentAccess2.java:1358)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.elementToHTML(JavadocContentAccess2.java:1021)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.toHTML(JavadocContentAccess2.java:866)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.javadoc2HTML(JavadocContentAccess2.java:786)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContentFromSource(JavadocContentAccess2.java:671)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:534)
+	at org.eclipse.jdt.internal.ui.text.java.ProposalInfo.extractJavadoc(ProposalInfo.java:90)
+	at org.eclipse.jdt.internal.ui.text.java.ProposalInfo.computeInfo(ProposalInfo.java:75)
+	at org.eclipse.jdt.internal.ui.text.java.ProposalInfo.getInfo(ProposalInfo.java:60)
+	at org.eclipse.jdt.internal.ui.text.java.AbstractJavaCompletionProposal.getAdditionalProposalInfo(AbstractJavaCompletionProposal.java:602)
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController$Timer$2$1.run(AdditionalInfoController.java:113)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SESSION 2018-03-10 14:37:57.709 -----------------------------------------------
+eclipse.buildId=4.6.3.M20170301-0400
+java.version=1.8.0_131
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product -keyring /Users/daniel/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.java.product -keyring /Users/daniel/.eclipse_keyring
+
+!ENTRY org.eclipse.core.net 1 0 2018-03-10 14:38:18.455
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2018-03-14 10:50:54.102 -----------------------------------------------
+eclipse.buildId=4.6.3.M20170301-0400
+java.version=1.8.0_131
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product -keyring /Users/daniel/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.java.product -keyring /Users/daniel/.eclipse_keyring
+
+!ENTRY org.eclipse.core.resources 2 10035 2018-03-14 10:51:11.214
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.core.net 1 0 2018-03-14 10:51:16.174
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2018-03-14 10:58:40.339
+!MESSAGE Exception caught during execution of command '[git, --version]' in '/usr/bin', return code '1', error message 'xcrun: error: invalid active developer path (/Library/Developer/CommandLineTools), missing xcrun at: /Library/Developer/CommandLineTools/usr/bin/xcrun
+'

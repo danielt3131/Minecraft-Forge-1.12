@@ -1,0 +1,27 @@
+{
+    "type": "minecraft:crafting_shaped",
+
+    "pattern":
+    [
+        "AB"
+    ],
+
+    "key":
+    {
+        "A":
+        {
+            "item": "lsutigers3131:basketball"
+        },
+
+        "B":
+        {
+            "item": "lsutigers3131:ballpump"
+        }
+
+    },
+
+    "result":
+    {
+        "item": "lsutigers3131:basketball_block"
+    }
+}

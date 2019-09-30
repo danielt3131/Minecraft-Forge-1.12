@@ -1,1 +1,1 @@
-Souce code is in srcs/com
+Souce code is in src/com

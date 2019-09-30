@@ -13,7 +13,7 @@ public class ModItems {
 	
 	//Items
 	public static final Item THICK_STEAK = new ItemThickSteak();
-	public static final Item RUBY = new ItemBase("ruby");
-	public static final Item BASKETBALL = new ItemBase("basketball");
-	public static final Item BALLPUMP = new ItemBase("ballpump");
+	//public static final Item RUBY = new ItemBase("ruby");
+	//public static final Item BASKETBALL = new ItemBase("basketball");
+	//public static final Item BALLPUMP = new ItemBase("ballpump");
 }

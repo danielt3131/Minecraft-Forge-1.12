@@ -1,7 +1,0 @@
-package com.LSUtigers3131.mod.blocks;
-
-import net.minecraft.block.Block;
-
-public class BlockLightBlock extends Block {
-
-}

@@ -1,7 +1,0 @@
-package com.LSUtigers3131.mod.items;
-
-import net.minecraft.item.ItemFood;
-
-public class ItemThickSteak extends ItemFood {
-
-}

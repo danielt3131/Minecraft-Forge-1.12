@@ -686,4 +686,9 @@ public class AnvilChunkLoader implements IChunkLoader, IThreadedFileIO
             return entity;
         }
     }
+
+    public int getPendingSaveCount()
+    {
+        return this.chunksToSave.size();
+    }
 }

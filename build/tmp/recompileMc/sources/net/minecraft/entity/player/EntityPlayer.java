@@ -155,9 +155,9 @@ public abstract class EntityPlayer extends EntityLivingBase
     /** Offset in the Z axis used for rendering. This field is {@linkplain #setRenderOffsetForSleep() used by beds}. */
     public float renderOffsetZ;
     /** holds the spawn chunk of the player */
-    private BlockPos spawnPos;
+    protected BlockPos spawnPos;
     /** Whether this player's spawn point is forced, preventing execution of bed checks. */
-    private boolean spawnForced;
+    protected boolean spawnForced;
     /** The player's capabilities. (See class PlayerCapabilities) */
     public PlayerCapabilities capabilities = new PlayerCapabilities();
     /** The current experience level the player is on. */
@@ -253,7 +253,7 @@ public abstract class EntityPlayer extends EntityLivingBase
                 {
                     this.wakeUpPlayer(true, true, false);
                 }
-                else if (this.world.isDaytime())
+                else if (!net.minecraftforge.event.ForgeEventFactory.fireSleepingTimeCheck(this, this.bedLocation))
                 {
                     this.wakeUpPlayer(false, true, true);
                 }
@@ -1080,7 +1080,7 @@ public abstract class EntityPlayer extends EntityLivingBase
      */
     public boolean attackEntityFrom(DamageSource source, float amount)
     {
-        if (!net.minecraftforge.common.ForgeHooks.onLivingAttack(this, source, amount)) return false;
+        if (!net.minecraftforge.common.ForgeHooks.onPlayerAttack(this, source, amount)) return false;
         if (this.isEntityInvulnerable(source))
         {
             return false;
@@ -1672,7 +1672,7 @@ public abstract class EntityPlayer extends EntityLivingBase
                 return EntityPlayer.SleepResult.NOT_POSSIBLE_HERE;
             }
 
-            if (this.world.isDaytime())
+            if (!net.minecraftforge.event.ForgeEventFactory.fireSleepingTimeCheck(this, this.bedLocation))
             {
                 return EntityPlayer.SleepResult.NOT_POSSIBLE_NOW;
             }
@@ -1753,7 +1753,7 @@ public abstract class EntityPlayer extends EntityLivingBase
     {
         net.minecraftforge.event.ForgeEventFactory.onPlayerWakeup(this, immediately, updateWorldFlag, setSpawn);
         this.setSize(0.6F, 1.8F);
-        IBlockState iblockstate = this.world.getBlockState(this.bedLocation);
+        IBlockState iblockstate = this.bedLocation == null ? null : this.world.getBlockState(this.bedLocation);
 
         if (this.bedLocation != null && iblockstate.getBlock().isBed(iblockstate, world, bedLocation, this))
         {

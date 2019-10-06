@@ -117,8 +117,8 @@ public enum ModelRotation implements net.minecraftforge.common.model.IModelState
         }
     }
 
-    public java.util.Optional<net.minecraftforge.common.model.TRSRTransformation> apply(java.util.Optional<? extends net.minecraftforge.common.model.IModelPart> part) { return net.minecraftforge.client.ForgeHooksClient.applyTransform(getMatrix(), part); }
-    public javax.vecmath.Matrix4f getMatrix() { return net.minecraftforge.client.ForgeHooksClient.getMatrix(this); }
+    public java.util.Optional<net.minecraftforge.common.model.TRSRTransformation> apply(java.util.Optional<? extends net.minecraftforge.common.model.IModelPart> part) { return net.minecraftforge.client.ForgeHooksClient.applyTransform(this, part); }
+    public javax.vecmath.Matrix4f getMatrix() { return net.minecraftforge.common.model.TRSRTransformation.from(this).getMatrix(); }
     public EnumFacing rotate(EnumFacing facing) { return rotateFace(facing); }
     public int rotate(EnumFacing facing, int vertexIndex) { return rotateVertex(facing, vertexIndex); }
 }

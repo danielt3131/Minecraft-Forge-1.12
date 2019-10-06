@@ -455,6 +455,25 @@ public abstract class WorldProvider
         return null;
     }
 
+    /**
+     * Determines if the player can sleep in this world (or if the bed should explode for example).
+     *
+     * @param player The player that is attempting to sleep
+     * @param pos The location where the player tries to sleep at (the position of the clicked on bed for example)
+     * @return the result of a player trying to sleep at the given location
+     */
+    public WorldSleepResult canSleepAt(net.minecraft.entity.player.EntityPlayer player, BlockPos pos)
+    {
+        return (this.canRespawnHere() && this.world.getBiome(pos) != net.minecraft.init.Biomes.HELL) ? WorldSleepResult.ALLOW : WorldSleepResult.BED_EXPLODES;
+    }
+
+    public static enum WorldSleepResult
+    {
+        ALLOW,
+        DENY,
+        BED_EXPLODES;
+    }
+
     /*======================================= Start Moved From World =========================================*/
 
     public Biome getBiomeForCoords(BlockPos pos)

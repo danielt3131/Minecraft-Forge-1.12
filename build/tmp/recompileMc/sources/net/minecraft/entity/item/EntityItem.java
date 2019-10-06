@@ -470,9 +470,9 @@ public class EntityItem extends Entity
     }
 
     @Nullable
-    public Entity changeDimension(int dimensionIn)
+    public Entity changeDimension(int dimensionIn, net.minecraftforge.common.util.ITeleporter teleporter)
     {
-        Entity entity = super.changeDimension(dimensionIn);
+        Entity entity = super.changeDimension(dimensionIn, teleporter);
 
         if (!this.world.isRemote && entity instanceof EntityItem)
         {

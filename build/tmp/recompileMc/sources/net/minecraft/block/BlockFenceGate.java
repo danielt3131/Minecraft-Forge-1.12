@@ -63,7 +63,7 @@ public class BlockFenceGate extends BlockHorizontal
     {
         EnumFacing.Axis enumfacing$axis = ((EnumFacing)state.getValue(FACING)).getAxis();
 
-        if (enumfacing$axis == EnumFacing.Axis.Z && (canFenceGateConnectTo(worldIn, pos, EnumFacing.WEST) || canFenceGateConnectTo(worldIn, pos, EnumFacing.EAST)) || enumfacing$axis == EnumFacing.Axis.X && (canFenceGateConnectTo(worldIn, pos, EnumFacing.NORTH) || canFenceGateConnectTo(worldIn, pos, EnumFacing.SOUTH)))
+        if (enumfacing$axis == EnumFacing.Axis.Z && (worldIn.getBlockState(pos.west()).getBlock() instanceof BlockWall || worldIn.getBlockState(pos.east()).getBlock() instanceof BlockWall) || enumfacing$axis == EnumFacing.Axis.X && (worldIn.getBlockState(pos.north()).getBlock() instanceof BlockWall || worldIn.getBlockState(pos.south()).getBlock() instanceof BlockWall))
         {
             state = state.withProperty(IN_WALL, Boolean.valueOf(true));
         }
@@ -236,14 +236,14 @@ public class BlockFenceGate extends BlockHorizontal
     @Override
     public boolean canBeConnectedTo(IBlockAccess world, BlockPos pos, EnumFacing facing)
     {
-        Block connector = world.getBlockState(pos.offset(facing)).getBlock();
-        return connector instanceof BlockFence || connector instanceof BlockWall;
-    }
-
-    private boolean canFenceGateConnectTo(IBlockAccess world, BlockPos pos, EnumFacing facing)
-    {
-        Block block = world.getBlockState(pos.offset(facing)).getBlock();
-        return block.canBeConnectedTo(world, pos.offset(facing), facing.getOpposite());
+        IBlockState state = world.getBlockState(pos);
+        if (state.getBlock() instanceof BlockFenceGate &&
+            state.getBlockFaceShape(world, pos, facing) == BlockFaceShape.MIDDLE_POLE)
+        {
+            Block connector = world.getBlockState(pos.offset(facing)).getBlock();
+            return connector instanceof BlockFence || connector instanceof BlockWall;
+        }
+        return false;
     }
 
     /* ======================================== FORGE END ======================================== */

@@ -212,7 +212,7 @@ public class EntitySilverfish extends EntityMob
                 {
                     Random random = this.entity.getRNG();
 
-                    if (this.entity.world.getGameRules().getBoolean("mobGriefing") && random.nextInt(10) == 0)
+                    if (net.minecraftforge.event.ForgeEventFactory.getMobGriefingEvent(this.entity.world, this.entity) && random.nextInt(10) == 0)
                     {
                         this.facing = EnumFacing.random(random);
                         BlockPos blockpos = (new BlockPos(this.entity.posX, this.entity.posY + 0.5D, this.entity.posZ)).offset(this.facing);
@@ -313,7 +313,7 @@ public class EntitySilverfish extends EntityMob
 
                                 if (iblockstate.getBlock() == Blocks.MONSTER_EGG)
                                 {
-                                    if (world.getGameRules().getBoolean("mobGriefing"))
+                                    if (net.minecraftforge.event.ForgeEventFactory.getMobGriefingEvent(world, this.silverfish))
                                     {
                                         world.destroyBlock(blockpos1, true);
                                     }

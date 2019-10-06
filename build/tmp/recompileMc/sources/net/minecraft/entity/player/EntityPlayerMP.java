@@ -708,7 +708,7 @@ public class EntityPlayerMP extends EntityPlayer implements IContainerListener
     }
 
     @Nullable
-    public Entity changeDimension(int dimensionIn)
+    public Entity changeDimension(int dimensionIn, net.minecraftforge.common.util.ITeleporter teleporter)
     {
         if (!net.minecraftforge.common.ForgeHooks.onTravelToDimension(this, dimensionIn)) return this;
         this.invulnerableDimensionChange = true;
@@ -722,7 +722,7 @@ public class EntityPlayerMP extends EntityPlayer implements IContainerListener
             this.enteredNetherPosition = null;
         }
 
-        if (this.dimension == 1 && dimensionIn == 1)
+        if (this.dimension == 1 && dimensionIn == 1 && teleporter.isVanilla())
         {
             this.world.removeEntity(this);
 
@@ -742,7 +742,7 @@ public class EntityPlayerMP extends EntityPlayer implements IContainerListener
                 dimensionIn = 1;
             }
 
-            this.mcServer.getPlayerList().changePlayerDimension(this, dimensionIn);
+            this.mcServer.getPlayerList().transferPlayerToDimension(this, dimensionIn, teleporter);
             this.connection.sendPacket(new SPacketEffect(1032, BlockPos.ORIGIN, 0, false));
             this.lastExperience = -1;
             this.lastHealth = -1.0F;
@@ -1267,6 +1267,11 @@ public class EntityPlayerMP extends EntityPlayer implements IContainerListener
 
         this.spawnChunkMap = that.spawnChunkMap;
         this.spawnForcedMap = that.spawnForcedMap;
+        if(that.dimension != 0)
+        {
+            this.spawnPos = that.spawnPos;
+            this.spawnForced = that.spawnForced;
+        }
 
         //Copy over a section of the Entity Data from the old player.
         //Allows mods to specify data that persists after players respawn.

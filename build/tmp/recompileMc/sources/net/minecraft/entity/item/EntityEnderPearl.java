@@ -151,13 +151,13 @@ public class EntityEnderPearl extends EntityThrowable
     }
 
     @Nullable
-    public Entity changeDimension(int dimensionIn)
+    public Entity changeDimension(int dimensionIn, net.minecraftforge.common.util.ITeleporter teleporter)
     {
         if (this.thrower.dimension != dimensionIn)
         {
             this.thrower = null;
         }
 
-        return super.changeDimension(dimensionIn);
+        return super.changeDimension(dimensionIn, teleporter);
     }
 }

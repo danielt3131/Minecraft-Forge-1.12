@@ -168,7 +168,7 @@ public class EntityPlayerSP extends AbstractClientPlayer
      */
     public boolean attackEntityFrom(DamageSource source, float amount)
     {
-        net.minecraftforge.common.ForgeHooks.onLivingAttack(this, source, amount);
+        net.minecraftforge.common.ForgeHooks.onPlayerAttack(this, source, amount);
         return false;
     }
 
@@ -1337,5 +1337,18 @@ public class EntityPlayerSP extends AbstractClientPlayer
                 }
             }
         }
+    }
+
+    public void updateSyncFields(EntityPlayerSP old)
+    {
+        this.lastReportedPosX = old.lastReportedPosX;
+        this.lastReportedPosY = old.lastReportedPosY;
+        this.lastReportedPosZ = old.lastReportedPosZ;
+        this.lastReportedYaw = old.lastReportedYaw;
+        this.lastReportedPitch = old.lastReportedPitch;
+        this.prevOnGround = old.prevOnGround;
+        this.serverSneakState = old.serverSneakState;
+        this.serverSprintState = old.serverSprintState;
+        this.positionUpdateTicks = old.positionUpdateTicks;
     }
 }

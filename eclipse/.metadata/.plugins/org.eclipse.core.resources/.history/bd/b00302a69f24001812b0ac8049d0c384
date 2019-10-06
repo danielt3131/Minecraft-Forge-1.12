@@ -1,7 +1,0 @@
-package com.LSUtigers3131.mod.items;
-
-import net.minecraft.item.Item;
-
-public class ItemOP_Pickaxe extends Item {
-
-}

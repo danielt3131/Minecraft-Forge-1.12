@@ -545,7 +545,7 @@ public class EntityDragon extends EntityLiving implements IEntityMultiPart, IMob
 
                     if (!block.isAir(iblockstate, this.world, blockpos) && iblockstate.getMaterial() != Material.FIRE)
                     {
-                        if (!this.world.getGameRules().getBoolean("mobGriefing"))
+                        if (!net.minecraftforge.event.ForgeEventFactory.getMobGriefingEvent(this.world, this))
                         {
                             flag = true;
                         }

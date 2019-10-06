@@ -304,7 +304,7 @@ public class EntityCreeper extends EntityMob
     {
         if (!this.world.isRemote)
         {
-            boolean flag = this.world.getGameRules().getBoolean("mobGriefing");
+            boolean flag = net.minecraftforge.event.ForgeEventFactory.getMobGriefingEvent(this.world, this);
             float f = this.getPowered() ? 2.0F : 1.0F;
             this.dead = true;
             this.world.createExplosion(this, this.posX, this.posY, this.posZ, (float)this.explosionRadius * f, flag);

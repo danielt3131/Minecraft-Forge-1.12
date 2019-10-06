@@ -1,6 +1,6 @@
 /*
  * Minecraft Forge
- * Copyright (c) 2016.
+ * Copyright (c) 2016-2018.
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -51,8 +51,11 @@ import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.event.RegistryEvent.MissingMappings;
 import net.minecraftforge.fml.common.EnhancedRuntimeException;
 import net.minecraftforge.fml.common.FMLCommonHandler;
+import net.minecraftforge.fml.common.FMLContainer;
 import net.minecraftforge.fml.common.FMLLog;
+import net.minecraftforge.fml.common.InjectedModContainer;
 import net.minecraftforge.fml.common.Loader;
+import net.minecraftforge.fml.common.ModContainer;
 import net.minecraftforge.fml.common.StartupQuery;
 import net.minecraftforge.fml.common.ZipperUtil;
 import net.minecraftforge.fml.common.registry.EntityEntry;
@@ -67,8 +70,10 @@ import java.io.IOException;
 import java.lang.reflect.Field;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.IdentityHashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.function.BiConsumer;
 import java.util.function.Predicate;
@@ -109,8 +114,9 @@ public class GameData
     private static final int MAX_RECIPE_ID = Integer.MAX_VALUE >> 5; // Varint CPacketRecipeInfo/SPacketRecipeBook
     private static final int MAX_PROFESSION_ID = 1024; //TODO: Is this serialized anywhere anymore?
 
-    private static final ResourceLocation BLOCK_TO_ITEM    = new ResourceLocation("minecraft:blocktoitemmap");
-    private static final ResourceLocation BLOCKSTATE_TO_ID = new ResourceLocation("minecraft:blockstatetoid");
+    private static final ResourceLocation BLOCK_TO_ITEM         = new ResourceLocation("minecraft:blocktoitemmap");
+    private static final ResourceLocation BLOCKSTATE_TO_ID      = new ResourceLocation("minecraft:blockstatetoid");
+    private static final ResourceLocation ENTITY_CLASS_TO_ENTRY = new ResourceLocation("forge:entity_class_to_entry");
     private static boolean hasInit = false;
     private static final boolean DISABLE_VANILLA_REGISTRIES = Boolean.parseBoolean(System.getProperty("forge.disableVanillaGameData", "false")); // Use for unit tests/debugging
     private static final BiConsumer<ResourceLocation, ForgeRegistry<?>> LOCK_VANILLA = (name, reg) -> reg.slaves.values().stream().filter(o -> o instanceof ILockableRegistry).forEach(o -> ((ILockableRegistry)o).lock());
@@ -160,7 +166,7 @@ public class GameData
         Validate.notNull(reg, "Attempted to get vanilla wrapper for unknown registry: " + cls.toString());
         @SuppressWarnings("unchecked")
         RegistryNamespacedDefaultedByKey<ResourceLocation, V> ret = reg.getSlaveMap(NamespacedDefaultedWrapper.Factory.ID, NamespacedDefaultedWrapper.class);
-        Validate.notNull(reg, "Attempted to get vanilla wrapper for registry created incorrectly: " + cls.toString());
+        Validate.notNull(ret, "Attempted to get vanilla wrapper for registry created incorrectly: " + cls.toString());
         return ret;
     }
 
@@ -170,7 +176,7 @@ public class GameData
         Validate.notNull(reg, "Attempted to get vanilla wrapper for unknown registry: " + cls.toString());
         @SuppressWarnings("unchecked")
         RegistryNamespaced<ResourceLocation, V> ret = reg.getSlaveMap(NamespacedWrapper.Factory.ID, NamespacedWrapper.class);
-        Validate.notNull(reg, "Attempted to get vanilla wrapper for registry created incorrectly: " + cls.toString());
+        Validate.notNull(ret, "Attempted to get vanilla wrapper for registry created incorrectly: " + cls.toString());
         return ret;
     }
 
@@ -184,6 +190,12 @@ public class GameData
     public static ObjectIntIdentityMap<IBlockState> getBlockStateIDMap()
     {
         return GameRegistry.findRegistry(Block.class).getSlaveMap(BLOCKSTATE_TO_ID, ObjectIntIdentityMap.class);
+    }
+
+    @SuppressWarnings("unchecked")
+    public static Map<Class<? extends Entity>, EntityEntry> getEntityClassMap()
+    {
+        return GameRegistry.findRegistry(EntityEntry.class).getSlaveMap(ENTITY_CLASS_TO_ENTRY, Map.class);
     }
 
     public static <K extends IForgeRegistryEntry<K>> K register_impl(K value)
@@ -400,9 +412,21 @@ public class GameData
         }
     }
 
-    private static class RecipeCallbacks implements IForgeRegistry.MissingFactory<IRecipe>
+    private static class RecipeCallbacks implements IForgeRegistry.ValidateCallback<IRecipe>, IForgeRegistry.MissingFactory<IRecipe>
     {
         static final RecipeCallbacks INSTANCE = new RecipeCallbacks();
+
+        @Override
+        public void onValidate(IForgeRegistryInternal<IRecipe> owner, RegistryManager stage, int id, ResourceLocation key, IRecipe obj)
+        {
+            if (stage != RegistryManager.ACTIVE) return;
+            // verify the recipe output yields a registered item
+            Item item = obj.getRecipeOutput().getItem();
+            if (!stage.getRegistry(Item.class).containsValue(item))
+            {
+                throw new IllegalStateException(String.format("Recipe %s (%s) produces unregistered item %s (%s)", key, obj, item.getRegistryName(), item));
+            }
+        }
 
         @Override
         public IRecipe createMissing(ResourceLocation key, boolean isNetwork)
@@ -438,7 +462,7 @@ public class GameData
         reg.register(id, key, new EntityEntry(clazz, oldName));
     }
 
-    private static class EntityCallbacks implements IForgeRegistry.AddCallback<EntityEntry>
+    private static class EntityCallbacks implements IForgeRegistry.AddCallback<EntityEntry>, IForgeRegistry.ClearCallback<EntityEntry>, IForgeRegistry.CreateCallback<EntityEntry>
     {
         static final EntityCallbacks INSTANCE = new EntityCallbacks();
 
@@ -450,7 +474,24 @@ public class GameData
                 ((EntityEntryBuilder.BuiltEntityEntry) entry).addedToRegistry();
             }
             if (entry.getEgg() != null)
+            {
                 EntityList.ENTITY_EGGS.put(entry.getRegistryName(), entry.getEgg());
+            }
+            @SuppressWarnings("unchecked")
+            Map<Class<? extends Entity>, EntityEntry> map = owner.getSlaveMap(ENTITY_CLASS_TO_ENTRY, Map.class);
+            map.put(entry.getEntityClass(), entry);
+        }
+
+        @Override
+        public void onClear(IForgeRegistryInternal<EntityEntry> owner, RegistryManager stage)
+        {
+            owner.getSlaveMap(ENTITY_CLASS_TO_ENTRY, Map.class).clear();
+        }
+
+        @Override
+        public void onCreate(IForgeRegistryInternal<EntityEntry> owner, RegistryManager stage)
+        {
+            owner.setSlaveMap(ENTITY_CLASS_TO_ENTRY, new IdentityHashMap<>());
         }
     }
 
@@ -756,6 +797,21 @@ public class GameData
                 ((ForgeRegistry<?>)reg).freeze();
         });
         */
+    }
+
+    public static ResourceLocation checkPrefix(String name)
+    {
+        int index = name.lastIndexOf(':');
+        String oldPrefix = index == -1 ? "" : name.substring(0, index).toLowerCase(Locale.ROOT);
+        name = index == -1 ? name : name.substring(index + 1);
+        ModContainer mc = Loader.instance().activeModContainer();
+        String prefix = mc == null || (mc instanceof InjectedModContainer && ((InjectedModContainer)mc).wrappedContainer instanceof FMLContainer) ? "minecraft" : mc.getModId().toLowerCase(Locale.ROOT);
+        if (!oldPrefix.equals(prefix) && oldPrefix.length() > 0)
+        {
+            FMLLog.log.warn("Potentially Dangerous alternative prefix `{}` for name `{}`, expected `{}`. This could be a intended override, but in most cases indicates a broken mod.", oldPrefix, name, prefix);
+            prefix = oldPrefix;
+        }
+        return new ResourceLocation(prefix, name);
     }
 
     private static Field regName;

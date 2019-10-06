@@ -49,7 +49,7 @@ public class EntityOtherPlayerMP extends AbstractClientPlayer
      */
     public boolean attackEntityFrom(DamageSource source, float amount)
     {
-        net.minecraftforge.common.ForgeHooks.onLivingAttack(this, source, amount);
+        net.minecraftforge.common.ForgeHooks.onPlayerAttack(this, source, amount);
         return true;
     }
 

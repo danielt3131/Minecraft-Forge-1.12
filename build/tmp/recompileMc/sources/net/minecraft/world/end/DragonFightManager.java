@@ -82,6 +82,7 @@ public class DragonFightManager
 
             this.dragonKilled = compound.getBoolean("DragonKilled");
             this.previouslyKilled = compound.getBoolean("PreviouslyKilled");
+            this.scanForLegacyFight = !compound.getBoolean("LegacyScanPerformed"); // Forge: fix MC-105080
 
             if (compound.getBoolean("IsRespawning"))
             {
@@ -128,6 +129,7 @@ public class DragonFightManager
 
         nbttagcompound.setBoolean("DragonKilled", this.dragonKilled);
         nbttagcompound.setBoolean("PreviouslyKilled", this.previouslyKilled);
+        nbttagcompound.setBoolean("LegacyScanPerformed", !this.scanForLegacyFight); // Forge: fix MC-105080
 
         if (this.exitPortalLocation != null)
         {
@@ -581,5 +583,15 @@ public class DragonFightManager
                 entityendercrystal.setBeamTarget((BlockPos)null);
             }
         }
+    }
+
+    public void addPlayer(EntityPlayerMP player)
+    {
+        this.bossInfo.addPlayer(player);
+    }
+
+    public void removePlayer(EntityPlayerMP player)
+    {
+        this.bossInfo.removePlayer(player);
     }
 }

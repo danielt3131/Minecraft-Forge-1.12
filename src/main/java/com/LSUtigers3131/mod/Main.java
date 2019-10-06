@@ -1,5 +1,6 @@
 package com.LSUtigers3131.mod;
 
+import com.LSUtigers3131.mod.Reference;
 import com.LSUtigers3131.mod.items.ModItems;
 import com.LSUtigers3131.mod.proxy.CommonProxy;
 import com.LSUtigers3131.mod.tabs.Daniel;
@@ -7,7 +8,6 @@ import com.LSUtigers3131.mod.tabs.Daniel;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;

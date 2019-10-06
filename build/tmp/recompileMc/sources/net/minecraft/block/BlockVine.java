@@ -203,7 +203,7 @@ public class BlockVine extends Block implements net.minecraftforge.common.IShear
     {
         if (!worldIn.isRemote)
         {
-            if (worldIn.rand.nextInt(4) == 0)
+            if (worldIn.rand.nextInt(4) == 0 && worldIn.isAreaLoaded(pos, 4)) // Forge: check area to prevent loading unloaded chunks
             {
                 int i = 4;
                 int j = 5;

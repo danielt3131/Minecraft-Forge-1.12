@@ -274,6 +274,11 @@ public class SoundHandler implements IResourceManagerReloadListener, ITickable
         this.sndManager.setListener(player, p_147691_2_);
     }
 
+    public void setListener(net.minecraft.entity.Entity entity, float partialTicks)
+    {
+        this.sndManager.setListener(entity, partialTicks);
+    }
+
     public void pauseSounds()
     {
         this.sndManager.pauseAllSounds();

@@ -217,8 +217,7 @@ public class BlockWall extends Block
     @Override
     public boolean canBeConnectedTo(IBlockAccess world, BlockPos pos, EnumFacing facing)
     {
-        Block connector = world.getBlockState(pos.offset(facing)).getBlock();
-        return connector instanceof BlockWall || connector instanceof BlockFenceGate;
+        return canConnectTo(world, pos.offset(facing), facing.getOpposite());
     }
 
     private boolean canWallConnectTo(IBlockAccess world, BlockPos pos, EnumFacing facing)

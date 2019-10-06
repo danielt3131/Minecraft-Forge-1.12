@@ -2464,6 +2464,22 @@ public class Block extends net.minecraftforge.registries.IForgeRegistryEntry.Imp
     }
 
     /**
+     * Used to determine the state 'viewed' by an entity (see
+     * {@link net.minecraft.client.renderer.ActiveRenderInfo#getBlockStateAtEntityViewpoint(World, Entity, float)}).
+     * Can be used by fluid blocks to determine if the viewpoint is within the fluid or not.
+     *
+     * @param state     the state
+     * @param world     the world
+     * @param pos       the position
+     * @param viewpoint the viewpoint
+     * @return the block state that should be 'seen'
+     */
+    public IBlockState getStateAtViewpoint(IBlockState state, IBlockAccess world, BlockPos pos, Vec3d viewpoint)
+    {
+        return state;
+    }
+
+    /**
      * Gets the {@link IBlockState} to place
      * @param world The world the block is being placed in
      * @param pos The position the block is being placed at
@@ -2705,7 +2721,7 @@ public class Block extends net.minecraftforge.registries.IForgeRegistryEntry.Imp
         Block block11 = (new BlockQuartz()).setSoundType(SoundType.STONE).setHardness(0.8F).setUnlocalizedName("quartzBlock");
         registerBlock(155, "quartz_block", block11);
         registerBlock(156, "quartz_stairs", (new BlockStairs(block11.getDefaultState().withProperty(BlockQuartz.VARIANT, BlockQuartz.EnumType.DEFAULT))).setUnlocalizedName("stairsQuartz"));
-        registerBlock(157, "activator_rail", (new BlockRailPowered()).setHardness(0.7F).setSoundType(SoundType.METAL).setUnlocalizedName("activatorRail"));
+        registerBlock(157, "activator_rail", (new BlockRailPowered(true)).setHardness(0.7F).setSoundType(SoundType.METAL).setUnlocalizedName("activatorRail"));
         registerBlock(158, "dropper", (new BlockDropper()).setHardness(3.5F).setSoundType(SoundType.STONE).setUnlocalizedName("dropper"));
         registerBlock(159, "stained_hardened_clay", (new BlockStainedHardenedClay()).setHardness(1.25F).setResistance(7.0F).setSoundType(SoundType.STONE).setUnlocalizedName("clayHardenedStained"));
         registerBlock(160, "stained_glass_pane", (new BlockStainedGlassPane()).setHardness(0.3F).setSoundType(SoundType.GLASS).setUnlocalizedName("thinStainedGlass"));

@@ -166,7 +166,7 @@ public abstract class MinecraftServer implements ICommandSender, Runnable, IThre
     private long nanoTimeSinceStatusRefresh;
     public final Queue < FutureTask<? >> futureTaskQueue = Queues. < FutureTask<? >> newArrayDeque();
     private Thread serverThread;
-    private long currentTime = getCurrentTimeMillis();
+    protected long currentTime = getCurrentTimeMillis();
     @SideOnly(Side.CLIENT)
     private boolean worldIconSet;
 
@@ -528,6 +528,8 @@ public abstract class MinecraftServer implements ICommandSender, Runnable, IThre
         {
             this.usageSnooper.stopSnooper();
         }
+
+        CommandBase.setCommandListener(null); // Forge: fix MC-128561
     }
 
     public boolean isServerRunning()
@@ -908,7 +910,7 @@ public abstract class MinecraftServer implements ICommandSender, Runnable, IThre
      */
     public WorldServer getWorld(int dimension)
     {
-        WorldServer ret = net.minecraftforge.common.DimensionManager.getWorld(dimension);
+        WorldServer ret = net.minecraftforge.common.DimensionManager.getWorld(dimension, true);
         if (ret == null)
         {
             net.minecraftforge.common.DimensionManager.initDimension(dimension);
@@ -1616,6 +1618,16 @@ public abstract class MinecraftServer implements ICommandSender, Runnable, IThre
     @SideOnly(Side.SERVER)
     public static void main(String[] p_main_0_)
     {
+        //Forge: Copied from DedicatedServer.init as to run as early as possible, Old code left in place intentionally.
+        //Done in good faith with permission: https://github.com/MinecraftForge/MinecraftForge/issues/3659#issuecomment-390467028
+        ServerEula eula = new ServerEula(new File("eula.txt"));
+        if (!eula.hasAcceptedEULA())
+        {
+            LOGGER.info("You need to agree to the EULA in order to run the server. Go to eula.txt for more info.");
+            eula.createEULAFile();
+            return;
+        }
+
         Bootstrap.register();
 
         try

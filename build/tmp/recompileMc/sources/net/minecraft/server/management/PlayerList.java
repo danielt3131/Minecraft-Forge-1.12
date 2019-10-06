@@ -149,6 +149,7 @@ public abstract class PlayerList
         WorldInfo worldinfo = worldserver.getWorldInfo();
         this.setPlayerGameTypeBasedOnOther(playerIn, (EntityPlayerMP)null, worldserver);
         playerIn.connection = nethandlerplayserver;
+        net.minecraftforge.fml.common.FMLCommonHandler.instance().fireServerConnectionEvent(netManager);
         nethandlerplayserver.sendPacket(new SPacketJoinGame(playerIn.getEntityId(), playerIn.interactionManager.getGameType(), worldinfo.isHardcoreModeEnabled(), worldserver.provider.getDimension(), worldserver.getDifficulty(), this.getMaxPlayers(), worldinfo.getTerrainType(), worldserver.getGameRules().getBoolean("reducedDebugInfo")));
         nethandlerplayserver.sendPacket(new SPacketCustomPayload("MC|Brand", (new PacketBuffer(Unpooled.buffer())).writeString(this.getServerInstance().getServerModName())));
         nethandlerplayserver.sendPacket(new SPacketServerDifficulty(worldinfo.getDifficulty(), worldinfo.isDifficultyLocked()));
@@ -642,7 +643,13 @@ public abstract class PlayerList
         transferPlayerToDimension(player, dimensionIn, mcServer.getWorld(dimensionIn).getDefaultTeleporter());
     }
 
+    // TODO: Remove (1.13)
     public void transferPlayerToDimension(EntityPlayerMP player, int dimensionIn, net.minecraft.world.Teleporter teleporter)
+    {
+        transferPlayerToDimension(player, dimensionIn, (net.minecraftforge.common.util.ITeleporter) teleporter);
+    }
+
+    public void transferPlayerToDimension(EntityPlayerMP player, int dimensionIn, net.minecraftforge.common.util.ITeleporter teleporter)
     {
         int i = player.dimension;
         WorldServer worldserver = this.mcServer.getWorld(player.dimension);
@@ -664,6 +671,10 @@ public abstract class PlayerList
         {
             player.connection.sendPacket(new SPacketEntityEffect(player.getEntityId(), potioneffect));
         }
+        // Fix MC-88179: on non-death SPacketRespawn, also resend attributes
+        net.minecraft.entity.ai.attributes.AttributeMap attributemap = (net.minecraft.entity.ai.attributes.AttributeMap) player.getAttributeMap();
+        java.util.Collection<net.minecraft.entity.ai.attributes.IAttributeInstance> watchedAttribs = attributemap.getWatchedAttributes();
+        if (!watchedAttribs.isEmpty()) player.connection.sendPacket(new net.minecraft.network.play.server.SPacketEntityProperties(player.getEntityId(), watchedAttribs));
         net.minecraftforge.fml.common.FMLCommonHandler.instance().firePlayerChangedDimensionEvent(player, i, dimensionIn);
     }
 
@@ -675,12 +686,15 @@ public abstract class PlayerList
         transferEntityToWorld(entityIn, lastDimension, oldWorldIn, toWorldIn, toWorldIn.getDefaultTeleporter());
     }
 
-    @SuppressWarnings("unused")
+    // TODO: Remove (1.13)
     public void transferEntityToWorld(Entity entityIn, int lastDimension, WorldServer oldWorldIn, WorldServer toWorldIn, net.minecraft.world.Teleporter teleporter)
     {
-        net.minecraft.world.WorldProvider pOld = oldWorldIn.provider;
-        net.minecraft.world.WorldProvider pNew = toWorldIn.provider;
-        double moveFactor = pOld.getMovementFactor() / pNew.getMovementFactor();
+        transferEntityToWorld(entityIn, lastDimension, oldWorldIn, toWorldIn, (net.minecraftforge.common.util.ITeleporter) teleporter);
+    }
+
+    public void transferEntityToWorld(Entity entityIn, int lastDimension, WorldServer oldWorldIn, WorldServer toWorldIn, net.minecraftforge.common.util.ITeleporter teleporter)
+    {
+        double moveFactor = oldWorldIn.provider.getMovementFactor() / toWorldIn.provider.getMovementFactor();
         double d0 = MathHelper.clamp(entityIn.posX * moveFactor, toWorldIn.getWorldBorder().minX() + 16.0D, toWorldIn.getWorldBorder().maxX() - 16.0D);
         double d1 = MathHelper.clamp(entityIn.posZ * moveFactor, toWorldIn.getWorldBorder().minZ() + 16.0D, toWorldIn.getWorldBorder().maxZ() - 16.0D);
         double d2 = 8.0D;
@@ -709,8 +723,7 @@ public abstract class PlayerList
                 oldWorldIn.updateEntityWithOptionalForce(entityIn, false);
             }
         }
-
-        if (entityIn.dimension == 1)
+        if (entityIn.dimension == 1 && teleporter.isVanilla())
         {
             BlockPos blockpos;
 
@@ -736,7 +749,7 @@ public abstract class PlayerList
 
         oldWorldIn.profiler.endSection();
 
-        if (lastDimension != 1)
+        if (lastDimension != 1 || !teleporter.isVanilla())
         {
             oldWorldIn.profiler.startSection("placing");
             d0 = (double)MathHelper.clamp((int)d0, -29999872, 29999872);
@@ -745,7 +758,8 @@ public abstract class PlayerList
             if (entityIn.isEntityAlive())
             {
                 entityIn.setLocationAndAngles(d0, entityIn.posY, d1, entityIn.rotationYaw, entityIn.rotationPitch);
-                teleporter.placeInPortal(entityIn, f);
+                oldWorldIn.updateEntityWithOptionalForce(entityIn, false);
+                teleporter.placeEntity(toWorldIn, entityIn, f);
                 toWorldIn.spawnEntity(entityIn);
                 toWorldIn.updateEntityWithOptionalForce(entityIn, false);
             }

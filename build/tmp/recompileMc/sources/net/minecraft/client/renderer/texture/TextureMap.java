@@ -124,8 +124,9 @@ public class TextureMap extends AbstractTexture implements ITickableTextureObjec
         {
             if(location.equals(loading))
             {
-                final String error = "circular model dependencies, stack: [" + com.google.common.base.Joiner.on(", ").join(loadingSprites) + "]";
+                final String error = "circular texture dependencies, stack: [" + com.google.common.base.Joiner.on(", ").join(loadingSprites) + "]";
                 net.minecraftforge.fml.client.FMLClientHandler.instance().trackBrokenTexture(resourcelocation, error);
+                return j;
             }
         }
         loadingSprites.addLast(location);
@@ -140,6 +141,8 @@ public class TextureMap extends AbstractTexture implements ITickableTextureObjec
                 TextureAtlasSprite depSprite = mapRegisteredSprites.get(dependency.toString());
                 j = loadTexture(stitcher, resourceManager, dependency, depSprite, bar, j, k);
             }
+            try
+            {
             if (textureatlassprite.hasCustomLoader(resourceManager, resourcelocation))
             {
                 if (textureatlassprite.load(resourceManager, resourcelocation, l -> mapRegisteredSprites.get(l.toString())))
@@ -148,12 +151,12 @@ public class TextureMap extends AbstractTexture implements ITickableTextureObjec
                 }
             }
             else
-            try
             {
                 PngSizeInfo pngsizeinfo = PngSizeInfo.makeFromResource(resourceManager.getResource(resourcelocation));
                 iresource = resourceManager.getResource(resourcelocation);
                 boolean flag = iresource.getMetadata("animation") != null;
                 textureatlassprite.loadSprite(pngsizeinfo, flag);
+            }
             }
             catch (RuntimeException runtimeexception)
             {

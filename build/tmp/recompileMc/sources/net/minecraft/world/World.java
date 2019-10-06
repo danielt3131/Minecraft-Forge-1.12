@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.UUID;
 import java.util.function.Supplier;
+
 import javax.annotation.Nullable;
 import net.minecraft.advancements.AdvancementManager;
 import net.minecraft.advancements.FunctionManager;
@@ -634,7 +635,7 @@ public abstract class World implements IBlockAccess, net.minecraftforge.common.c
                     {
                         try
                         {
-                            return String.format("ID #%d (%s // %s)", Block.getIdFromBlock(blockIn), blockIn.getUnlocalizedName(), blockIn.getClass().getCanonicalName());
+                            return String.format("ID #%d (%s // %s // %s)", Block.getIdFromBlock(blockIn), blockIn.getUnlocalizedName(), blockIn.getClass().getName(), blockIn.getRegistryName());
                         }
                         catch (Throwable var2)
                         {
@@ -670,7 +671,7 @@ public abstract class World implements IBlockAccess, net.minecraftforge.common.c
                         {
                             try
                             {
-                                return String.format("ID #%d (%s // %s)", Block.getIdFromBlock(p_190529_2_), p_190529_2_.getUnlocalizedName(), p_190529_2_.getClass().getCanonicalName());
+                                return String.format("ID #%d (%s // %s // %s)", Block.getIdFromBlock(p_190529_2_), p_190529_2_.getUnlocalizedName(), p_190529_2_.getClass().getName(), p_190529_2_.getRegistryName());
                             }
                             catch (Throwable var2)
                             {
@@ -1324,6 +1325,7 @@ public abstract class World implements IBlockAccess, net.minecraftforge.common.c
         {
             ((IWorldEventListener)this.eventListeners.get(i)).onEntityAdded(entityIn);
         }
+        entityIn.onAddedToWorld();
     }
 
     public void onEntityRemoved(Entity entityIn)
@@ -1332,6 +1334,7 @@ public abstract class World implements IBlockAccess, net.minecraftforge.common.c
         {
             ((IWorldEventListener)this.eventListeners.get(i)).onEntityRemoved(entityIn);
         }
+        entityIn.onRemovedFromWorld();
     }
 
     /**
@@ -3031,11 +3034,10 @@ public abstract class World implements IBlockAccess, net.minecraftforge.common.c
         else
         {
             IBlockState iblockstate1 = this.getBlockState(pos);
-            int blockLight = iblockstate1.getBlock().getLightValue(iblockstate1, this, pos);
-            int j2 = lightType == EnumSkyBlock.SKY ? 0 : blockLight;
+            int j2 = lightType == EnumSkyBlock.SKY ? 0 : iblockstate1.getBlock().getLightValue(iblockstate1, this, pos);
             int k2 = iblockstate1.getBlock().getLightOpacity(iblockstate1, this, pos);
 
-            if (k2 >= 15 && blockLight > 0)
+            if (false) // Forge: fix MC-119932
             {
                 k2 = 1;
             }
@@ -3047,7 +3049,7 @@ public abstract class World implements IBlockAccess, net.minecraftforge.common.c
 
             if (k2 >= 15)
             {
-                return 0;
+                return j2; // Forge: fix MC-119932
             }
             else if (j2 >= 14)
             {
@@ -3088,12 +3090,13 @@ public abstract class World implements IBlockAccess, net.minecraftforge.common.c
 
     public boolean checkLightFor(EnumSkyBlock lightType, BlockPos pos)
     {
-        if (!this.isAreaLoaded(pos, 17, false))
+        if (!this.isAreaLoaded(pos, 16, false))
         {
             return false;
         }
         else
         {
+            int updateRange = this.isAreaLoaded(pos, 18, false) ? 17 : 15;
             int j2 = 0;
             int k2 = 0;
             this.profiler.startSection("getBrightness");
@@ -3131,7 +3134,7 @@ public abstract class World implements IBlockAccess, net.minecraftforge.common.c
                             int l5 = MathHelper.abs(k4 - k3);
                             int i6 = MathHelper.abs(l4 - l3);
 
-                            if (k5 + l5 + i6 < 17)
+                            if (k5 + l5 + i6 < updateRange)
                             {
                                 BlockPos.PooledMutableBlockPos blockpos$pooledmutableblockpos = BlockPos.PooledMutableBlockPos.retain();
 
@@ -3184,7 +3187,7 @@ public abstract class World implements IBlockAccess, net.minecraftforge.common.c
                         int j9 = Math.abs(i8 - l3);
                         boolean flag = k2 < this.lightUpdateBlockList.length - 6;
 
-                        if (l8 + i9 + j9 < 17 && flag)
+                        if (l8 + i9 + j9 < updateRange && flag)
                         {
                             if (this.getLightFor(lightType, blockpos2.west()) < k8)
                             {

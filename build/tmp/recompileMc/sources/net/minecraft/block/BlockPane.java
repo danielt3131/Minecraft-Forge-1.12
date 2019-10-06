@@ -116,7 +116,10 @@ public class BlockPane extends Block
      */
     public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos)
     {
-        return state.withProperty(NORTH, Boolean.valueOf(this.attachesTo(worldIn, worldIn.getBlockState(pos.north()), pos.north(), EnumFacing.SOUTH))).withProperty(SOUTH, Boolean.valueOf(this.attachesTo(worldIn, worldIn.getBlockState(pos.south()), pos.south(), EnumFacing.NORTH))).withProperty(WEST, Boolean.valueOf(this.attachesTo(worldIn, worldIn.getBlockState(pos.west()), pos.west(), EnumFacing.EAST))).withProperty(EAST, Boolean.valueOf(this.attachesTo(worldIn, worldIn.getBlockState(pos.east()), pos.east(), EnumFacing.WEST)));
+        return state.withProperty(NORTH, canPaneConnectTo(worldIn, pos, EnumFacing.NORTH))
+                    .withProperty(SOUTH, canPaneConnectTo(worldIn, pos, EnumFacing.SOUTH))
+                    .withProperty(WEST,  canPaneConnectTo(worldIn, pos, EnumFacing.WEST))
+                    .withProperty(EAST,  canPaneConnectTo(worldIn, pos, EnumFacing.EAST));
     }
 
     /**
@@ -223,8 +226,8 @@ public class BlockPane extends Block
     @Override
     public boolean canBeConnectedTo(IBlockAccess world, BlockPos pos, EnumFacing facing)
     {
-        Block connector = world.getBlockState(pos.offset(facing)).getBlock();
-        return connector instanceof BlockPane;
+        BlockPos offset = pos.offset(facing);
+        return attachesTo(world, world.getBlockState(offset), offset, facing.getOpposite());
     }
 
     public boolean canPaneConnectTo(IBlockAccess world, BlockPos pos, EnumFacing dir)

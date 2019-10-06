@@ -318,14 +318,14 @@ public abstract class BlockLiquid extends Block
 
                 if (integer.intValue() == 0)
                 {
-                    worldIn.setBlockState(pos, Blocks.OBSIDIAN.getDefaultState());
+                    worldIn.setBlockState(pos, net.minecraftforge.event.ForgeEventFactory.fireFluidPlaceBlockEvent(worldIn, pos, pos, Blocks.OBSIDIAN.getDefaultState()));
                     this.triggerMixEffects(worldIn, pos);
                     return true;
                 }
 
                 if (integer.intValue() <= 4)
                 {
-                    worldIn.setBlockState(pos, Blocks.COBBLESTONE.getDefaultState());
+                    worldIn.setBlockState(pos, net.minecraftforge.event.ForgeEventFactory.fireFluidPlaceBlockEvent(worldIn, pos, pos, Blocks.COBBLESTONE.getDefaultState()));
                     this.triggerMixEffects(worldIn, pos);
                     return true;
                 }

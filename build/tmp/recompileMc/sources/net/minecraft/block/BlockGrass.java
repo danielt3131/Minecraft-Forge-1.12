@@ -42,6 +42,7 @@ public class BlockGrass extends Block implements IGrowable
     {
         if (!worldIn.isRemote)
         {
+            if (!worldIn.isAreaLoaded(pos, 3)) return; // Forge: prevent loading unloaded chunks when checking neighbor's light and spreading
             if (worldIn.getLightFromNeighbors(pos.up()) < 4 && worldIn.getBlockState(pos.up()).getLightOpacity(worldIn, pos.up()) > 2)
             {
                 worldIn.setBlockState(pos, Blocks.DIRT.getDefaultState());

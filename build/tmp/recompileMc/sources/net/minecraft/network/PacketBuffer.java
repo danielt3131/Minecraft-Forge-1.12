@@ -393,7 +393,7 @@ public class PacketBuffer extends ByteBuf
             int j = this.readByte();
             int k = this.readShort();
             ItemStack itemstack = new ItemStack(Item.getItemById(i), j, k);
-            itemstack.setTagCompound(this.readCompoundTag());
+            itemstack.getItem().readNBTShareTag(itemstack, this.readCompoundTag());
             return itemstack;
         }
     }

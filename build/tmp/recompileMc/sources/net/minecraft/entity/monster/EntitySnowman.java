@@ -114,7 +114,7 @@ public class EntitySnowman extends EntityGolem implements IRangedAttackMob, net.
                 this.attackEntityFrom(DamageSource.ON_FIRE, 1.0F);
             }
 
-            if (!this.world.getGameRules().getBoolean("mobGriefing"))
+            if (!net.minecraftforge.event.ForgeEventFactory.getMobGriefingEvent(this.world, this))
             {
                 return;
             }

@@ -556,7 +556,7 @@ public class EntityEnderman extends EntityMob
                 {
                     return false;
                 }
-                else if (!this.enderman.world.getGameRules().getBoolean("mobGriefing"))
+                else if (!net.minecraftforge.event.ForgeEventFactory.getMobGriefingEvent(this.enderman.world, this.enderman))
                 {
                     return false;
                 }
@@ -627,7 +627,7 @@ public class EntityEnderman extends EntityMob
                 {
                     return false;
                 }
-                else if (!this.enderman.world.getGameRules().getBoolean("mobGriefing"))
+                else if (!net.minecraftforge.event.ForgeEventFactory.getMobGriefingEvent(this.enderman.world, this.enderman))
                 {
                     return false;
                 }

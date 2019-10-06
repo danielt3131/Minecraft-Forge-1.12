@@ -398,6 +398,7 @@ public class Village implements net.minecraftforge.common.capabilities.ICapabili
                 villagedoorinfo.resetDoorOpeningRestrictionCounter();
             }
 
+            if (world.isBlockLoaded(villagedoorinfo.getDoorBlockPos())) // Forge: check that the door block is loaded to avoid loading chunks
             if (!this.isWoodDoor(villagedoorinfo.getDoorBlockPos()) || Math.abs(this.tickCounter - villagedoorinfo.getLastActivityTimestamp()) > 1200)
             {
                 this.centerHelper = this.centerHelper.subtract(villagedoorinfo.getDoorBlockPos());

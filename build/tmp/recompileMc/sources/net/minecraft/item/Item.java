@@ -685,6 +685,17 @@ public class Item extends net.minecraftforge.registries.IForgeRegistryEntry.Impl
     }
 
     /**
+     * Override this method to decide what to do with the NBT data received from getNBTShareTag().
+     * 
+     * @param stack The stack that received NBT
+     * @param nbt Received NBT, can be null
+     */
+    public void readNBTShareTag(ItemStack stack, @Nullable NBTTagCompound nbt)
+    {
+        stack.setTagCompound(nbt);
+    }
+
+    /**
      * Called before a block is broken.  Return true to prevent default block harvesting.
      *
      * Note: In SMP, this is called on both client and server sides!
@@ -1209,8 +1220,7 @@ public class Item extends net.minecraftforge.registries.IForgeRegistryEntry.Impl
     @Nullable
     public String getCreatorModId(ItemStack itemStack)
     {
-        ResourceLocation registryName = getRegistryName();
-        return registryName == null ? null : registryName.getResourceDomain();
+        return net.minecraftforge.common.ForgeHooks.getDefaultCreatorModId(itemStack);
     }
 
     /**
@@ -1306,6 +1316,25 @@ public class Item extends net.minecraftforge.registries.IForgeRegistryEntry.Impl
      * @param armor the armor itemstack
      */
     public void onHorseArmorTick(World world, net.minecraft.entity.EntityLiving horse, ItemStack armor) {}
+    
+    @SideOnly(Side.CLIENT)
+    @Nullable
+    private net.minecraft.client.renderer.tileentity.TileEntityItemStackRenderer teisr;
+    
+    /**
+     * @return This Item's renderer, or the default instance if it does not have one.
+     */
+    @SideOnly(Side.CLIENT)
+    public final net.minecraft.client.renderer.tileentity.TileEntityItemStackRenderer getTileEntityItemStackRenderer()
+    {
+    	return teisr != null ? teisr : net.minecraft.client.renderer.tileentity.TileEntityItemStackRenderer.instance;
+    }
+    
+    @SideOnly(Side.CLIENT)
+    public void setTileEntityItemStackRenderer(@Nullable net.minecraft.client.renderer.tileentity.TileEntityItemStackRenderer teisr)
+    {
+    	this.teisr = teisr;
+    }  
 
     /* ======================================== FORGE END   =====================================*/
 

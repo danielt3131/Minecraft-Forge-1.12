@@ -260,7 +260,7 @@ public class ItemMap extends ItemMapBase
 
             if (mapdata != null)
             {
-                if (worldIn.provider.getDimensionType().getId() == mapdata.dimension)
+                if (worldIn.provider.getDimension() == mapdata.dimension)
                 {
                     int i = 1 << mapdata.scale;
                     int j = mapdata.xCenter;

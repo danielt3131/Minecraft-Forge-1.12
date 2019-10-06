@@ -60,7 +60,7 @@ public class EntitySmallFireball extends EntityFireball
 
                 if (this.shootingEntity != null && this.shootingEntity instanceof EntityLiving)
                 {
-                    flag1 = this.world.getGameRules().getBoolean("mobGriefing");
+                    flag1 = net.minecraftforge.event.ForgeEventFactory.getMobGriefingEvent(this.world, this.shootingEntity);
                 }
 
                 if (flag1)

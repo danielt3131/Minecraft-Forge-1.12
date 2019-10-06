@@ -168,10 +168,10 @@ public abstract class EntityMinecartContainer extends EntityMinecart implements 
     }
 
     @Nullable
-    public Entity changeDimension(int dimensionIn)
+    public Entity changeDimension(int dimensionIn, net.minecraftforge.common.util.ITeleporter teleporter)
     {
         this.dropContentsWhenDead = false;
-        return super.changeDimension(dimensionIn);
+        return super.changeDimension(dimensionIn, teleporter);
     }
 
     /**

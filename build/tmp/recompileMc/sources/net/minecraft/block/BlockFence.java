@@ -240,21 +240,7 @@ public class BlockFence extends Block
     @Override
     public boolean canBeConnectedTo(IBlockAccess world, BlockPos pos, EnumFacing facing)
     {
-        Block connector = world.getBlockState(pos.offset(facing)).getBlock();
-
-        if(connector instanceof BlockFence)
-        {
-            if(this != Blocks.NETHER_BRICK_FENCE && connector == Blocks.NETHER_BRICK_FENCE)
-            {
-                return false;
-            }
-            else if(this == Blocks.NETHER_BRICK_FENCE && connector != Blocks.NETHER_BRICK_FENCE)
-            {
-                return false;
-            }
-            return true;
-        }
-        return false;
+        return canConnectTo(world, pos.offset(facing), facing.getOpposite());
     }
 
     private boolean canFenceConnectTo(IBlockAccess world, BlockPos pos, EnumFacing facing)

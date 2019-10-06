@@ -637,4 +637,12 @@ public class BufferBuilder
     {
         return this.noColor;
     }
+
+    public void putBulkData(ByteBuffer buffer)
+    {
+        growBuffer(buffer.limit() + this.vertexFormat.getNextOffset());
+        this.byteBuffer.position(this.vertexCount * this.vertexFormat.getNextOffset());
+        this.byteBuffer.put(buffer);
+        this.vertexCount += buffer.limit() / this.vertexFormat.getNextOffset();
+    }
 }

@@ -41,6 +41,7 @@ public class ChatAllowedCharacters
 
     static
     {
+        if (System.getProperty("io.netty.leakDetection.level") == null) // Forge: allow level to be manually specified
         ResourceLeakDetector.setLevel(NETTY_LEAK_DETECTION);
     }
 }

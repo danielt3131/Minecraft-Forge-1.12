@@ -593,7 +593,7 @@ public class EntityRabbit extends EntityAnimal
             {
                 if (this.runDelay <= 0)
                 {
-                    if (!this.rabbit.world.getGameRules().getBoolean("mobGriefing"))
+                    if (!net.minecraftforge.event.ForgeEventFactory.getMobGriefingEvent(this.rabbit.world, this.rabbit))
                     {
                         return false;
                     }

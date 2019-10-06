@@ -95,7 +95,7 @@ public class TileEntityRendererDispatcher
     @Nullable
     public <T extends TileEntity> TileEntitySpecialRenderer<T> getRenderer(@Nullable TileEntity tileEntityIn)
     {
-        return tileEntityIn == null ? null : this.getRenderer(tileEntityIn.getClass());
+        return tileEntityIn == null || tileEntityIn.isInvalid() ? null : this.getRenderer(tileEntityIn.getClass()); // Forge: fix MC-123363
     }
 
     public void prepare(World worldIn, TextureManager renderEngineIn, FontRenderer fontRendererIn, Entity entityIn, RayTraceResult cameraHitResultIn, float p_190056_6_)

@@ -160,6 +160,7 @@ public class EntityItemFrame extends EntityHanging
             }
 
             stack.setItemFrame((EntityItemFrame)null);
+            this.setDisplayedItem(ItemStack.EMPTY); //Forge: Fix MC-124833 Pistons duplicating Items.
         }
     }
 

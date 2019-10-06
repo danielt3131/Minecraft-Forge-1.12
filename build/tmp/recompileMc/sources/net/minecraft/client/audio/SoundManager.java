@@ -550,6 +550,11 @@ public class SoundManager
      */
     public void setListener(EntityPlayer player, float p_148615_2_)
     {
+        setListener((net.minecraft.entity.Entity) player, p_148615_2_);
+    }
+
+    public void setListener(net.minecraft.entity.Entity player, float p_148615_2_)
+    {
         if (this.loaded && player != null)
         {
             float f = player.prevRotationPitch + (player.rotationPitch - player.prevRotationPitch) * p_148615_2_;

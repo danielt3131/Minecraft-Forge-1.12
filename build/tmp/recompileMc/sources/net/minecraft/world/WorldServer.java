@@ -456,6 +456,7 @@ public class WorldServer extends World implements IThreadListener
                     BlockPos blockpos1 = this.getPrecipitationHeight(new BlockPos(j + (j2 & 15), 0, k + (j2 >> 8 & 15)));
                     BlockPos blockpos2 = blockpos1.down();
 
+                    if (this.isAreaLoaded(blockpos2, 1)) // Forge: check area to avoid loading neighbors in unloaded chunks
                     if (this.canBlockFreezeNoWater(blockpos2))
                     {
                         this.setBlockState(blockpos2, Blocks.ICE.getDefaultState());

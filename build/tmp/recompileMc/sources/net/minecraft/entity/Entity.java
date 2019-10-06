@@ -426,6 +426,7 @@ public abstract class Entity implements ICommandSender, net.minecraftforge.commo
         this.posX = x;
         this.posY = y;
         this.posZ = z;
+        if (this.isAddedToWorld() && !this.world.isRemote) this.world.updateEntityWithOptionalForce(this, false); // Forge - Process chunk registration after moving.
         float f = this.width / 2.0F;
         float f1 = this.height;
         this.setEntityBoundingBox(new AxisAlignedBB(x - (double)f, y, z - (double)f, x + (double)f, y + (double)f1, z + (double)f));
@@ -1117,6 +1118,7 @@ public abstract class Entity implements ICommandSender, net.minecraftforge.commo
         this.posX = (axisalignedbb.minX + axisalignedbb.maxX) / 2.0D;
         this.posY = axisalignedbb.minY;
         this.posZ = (axisalignedbb.minZ + axisalignedbb.maxZ) / 2.0D;
+        if (this.isAddedToWorld() && !this.world.isRemote) this.world.updateEntityWithOptionalForce(this, false); // Forge - Process chunk registration after moving.
     }
 
     protected SoundEvent getSwimSound()
@@ -1555,6 +1557,7 @@ public abstract class Entity implements ICommandSender, net.minecraftforge.commo
             this.prevRotationYaw -= 360.0F;
         }
 
+        if (!this.world.isRemote) this.world.getChunkFromChunkCoords((int) Math.floor(this.posX) >> 4, (int) Math.floor(this.posZ) >> 4); // Forge - ensure target chunk is loaded.
         this.setPosition(this.posX, this.posY, this.posZ);
         this.setRotation(yaw, pitch);
     }
@@ -2904,6 +2907,13 @@ public abstract class Entity implements ICommandSender, net.minecraftforge.commo
     @Nullable
     public Entity changeDimension(int dimensionIn)
     {
+        if (this.world.isRemote || this.isDead) return null;
+        return changeDimension(dimensionIn, this.getServer().getWorld(dimensionIn).getDefaultTeleporter());
+    }
+
+    @Nullable // Forge: Entities that require custom handling should override this method, not the other
+    public Entity changeDimension(int dimensionIn, net.minecraftforge.common.util.ITeleporter teleporter)
+    {
         if (!this.world.isRemote && !this.isDead)
         {
             if (!net.minecraftforge.common.ForgeHooks.onTravelToDimension(this, dimensionIn)) return null;
@@ -2914,7 +2924,7 @@ public abstract class Entity implements ICommandSender, net.minecraftforge.commo
             WorldServer worldserver1 = minecraftserver.getWorld(dimensionIn);
             this.dimension = dimensionIn;
 
-            if (i == 1 && dimensionIn == 1)
+            if (i == 1 && dimensionIn == 1 && teleporter.isVanilla())
             {
                 worldserver1 = minecraftserver.getWorld(0);
                 this.dimension = 0;
@@ -2925,7 +2935,7 @@ public abstract class Entity implements ICommandSender, net.minecraftforge.commo
             this.world.profiler.startSection("reposition");
             BlockPos blockpos;
 
-            if (dimensionIn == 1)
+            if (dimensionIn == 1 && teleporter.isVanilla())
             {
                 blockpos = worldserver1.getSpawnCoordinate();
             }
@@ -2951,8 +2961,7 @@ public abstract class Entity implements ICommandSender, net.minecraftforge.commo
                 d1 = (double)MathHelper.clamp((int)d1, -29999872, 29999872);
                 float f = this.rotationYaw;
                 this.setLocationAndAngles(d0, this.posY, d1, 90.0F, 0.0F);
-                Teleporter teleporter = worldserver1.getDefaultTeleporter();
-                teleporter.placeInExistingPortal(this, f);
+                teleporter.placeEntity(worldserver1, this, f);
                 blockpos = new BlockPos(this);
             }
 
@@ -2964,7 +2973,7 @@ public abstract class Entity implements ICommandSender, net.minecraftforge.commo
             {
                 entity.copyDataFromOld(this);
 
-                if (i == 1 && dimensionIn == 1)
+                if (i == 1 && dimensionIn == 1 && teleporter.isVanilla())
                 {
                     BlockPos blockpos1 = worldserver1.getTopSolidOrLiquidBlock(worldserver1.getSpawnPoint());
                     entity.moveToBlockPosAndAngles(blockpos1, entity.rotationYaw, entity.rotationPitch);
@@ -3374,6 +3383,41 @@ public abstract class Entity implements ICommandSender, net.minecraftforge.commo
 
     /* ================================== Forge Start =====================================*/
     /**
+     * Internal use for keeping track of entities that are tracked by a world, to
+     * allow guarantees that entity position changes will force a chunk load, avoiding
+     * potential issues with entity desyncing and bad chunk data.
+     */
+    private boolean isAddedToWorld;
+
+    /**
+     * Gets whether this entity has been added to a world (for tracking). Specifically
+     * between the times when an entity is added to a world and the entity being removed
+     * from the world's tracked lists. See {@link World#onEntityAdded(Entity)} and
+     * {@link World#onEntityRemoved(Entity)}.
+     *
+     * @return True if this entity is being tracked by a world
+     */
+    public final boolean isAddedToWorld() { return this.isAddedToWorld; }
+
+    /**
+     * Called after the entity has been added to the world's
+     * ticking list. Can be overriden, but needs to call super
+     * to prevent MC-136995.
+     */
+    public void onAddedToWorld() {
+        this.isAddedToWorld = true;
+    }
+
+    /**
+     * Called after the entity has been removed to the world's
+     * ticking list. Can be overriden, but needs to call super
+     * to prevent MC-136995.
+     */
+    public void onRemovedFromWorld() {
+        this.isAddedToWorld = false;
+    }
+
+    /**
      * Returns a NBTTagCompound that can be used to store custom data for this entity.
      * It will be written, and read from disc, so it persists over world saves.
      * @return A NBTTagCompound
@@ -3544,7 +3588,7 @@ public abstract class Entity implements ICommandSender, net.minecraftforge.commo
     {
         return world.rand.nextFloat() < fallDistance - 0.5F
             && this instanceof EntityLivingBase
-            && (this instanceof EntityPlayer || world.getGameRules().getBoolean("mobGriefing"))
+            && (this instanceof EntityPlayer || net.minecraftforge.event.ForgeEventFactory.getMobGriefingEvent(world, this))
             && this.width * this.width * this.height > 0.512F;
     }
     /* ================================== Forge End =====================================*/

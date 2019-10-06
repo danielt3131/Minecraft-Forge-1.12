@@ -290,13 +290,11 @@ public class ChunkProviderServer implements IChunkProvider
                         this.saveChunkExtraData(chunk);
                         this.id2ChunkMap.remove(olong);
                         ++i;
-                        if (id2ChunkMap.size() == 0 && net.minecraftforge.common.ForgeChunkManager.getPersistentChunksFor(this.world).size() == 0 && !this.world.provider.getDimensionType().shouldLoadSpawn()){
-                            net.minecraftforge.common.DimensionManager.unloadWorld(this.world.provider.getDimension());
-                            break;
-                        }
                     }
                 }
             }
+
+            if (this.id2ChunkMap.isEmpty()) net.minecraftforge.common.DimensionManager.unloadWorld(this.world.provider.getDimension());
 
             this.chunkLoader.chunkTick();
         }

@@ -1,77 +1,367 @@
-[21:53:03] [main/INFO]: Setting user: Player230
-[21:53:13] [main/WARN]: Skipping bad option: lastServer:
-[21:53:13] [main/INFO]: LWJGL Version: 2.9.2
-[21:53:20] [main/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Daniel's First Mod
-[21:53:26] [Sound Library Loader/INFO]: Starting up SoundSystem...
-[21:53:26] [main/ERROR]: ########## GL ERROR ##########
-[21:53:26] [main/ERROR]: @ Pre startup
-[21:53:26] [main/ERROR]: 1281: Invalid value
-[21:53:26] [Thread-4/INFO]: Initializing LWJGL OpenAL
-[21:53:26] [Thread-4/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
-[21:53:26] [Thread-4/INFO]: OpenAL initialized.
-[21:53:26] [Sound Library Loader/INFO]: Sound engine started
-[21:53:36] [main/INFO]: Created: 512x512 textures-atlas
-[21:53:42] [main/WARN]: Skipping bad option: lastServer:
-[21:53:44] [Realms Notification Availability checker #1/INFO]: Could not authorize you against Realms server: Invalid session id
-[21:53:57] [Server thread/INFO]: Starting integrated minecraft server version 1.12.2
-[21:53:57] [Server thread/INFO]: Generating keypair
-[21:54:08] [Server thread/INFO]: Loaded 488 advancements
-[21:54:08] [Server thread/INFO]: Preparing start region for level 0
-[21:54:10] [Server thread/INFO]: Changing view distance to 12, from 10
-[21:54:12] [Server thread/INFO]: Player230[local:E:ff5a6989] logged in with entity id 0 at (385.5708605000108, 1.0, 223.48883707890246)
-[21:54:12] [Server thread/INFO]: Player230 joined the game
-[21:54:14] [Server thread/INFO]: Saving and pausing game...
-[21:54:14] [Server thread/INFO]: Saving chunks for level 'New World'/overworld
-[21:54:15] [Server thread/INFO]: Saving chunks for level 'New World'/the_nether
-[21:54:15] [Server thread/INFO]: Saving chunks for level 'New World'/the_end
-[21:54:16] [pool-2-thread-1/WARN]: Couldn't look up profile properties for com.mojang.authlib.GameProfile@1f6c48c7[id=d6021e41-7343-3bee-bb0e-33bf78c6e47d,name=Player230,properties={},legacy=false]
-com.mojang.authlib.exceptions.AuthenticationException: The client has sent too many requests within a certain amount of time
-	at com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService.makeRequest(YggdrasilAuthenticationService.java:79) ~[YggdrasilAuthenticationService.class:?]
-	at com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService.fillGameProfile(YggdrasilMinecraftSessionService.java:180) [YggdrasilMinecraftSessionService.class:?]
-	at com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService$1.load(YggdrasilMinecraftSessionService.java:60) [YggdrasilMinecraftSessionService$1.class:?]
-	at com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService$1.load(YggdrasilMinecraftSessionService.java:57) [YggdrasilMinecraftSessionService$1.class:?]
-	at com.google.common.cache.LocalCache$LoadingValueReference.loadFuture(LocalCache.java:3716) [guava-21.0.jar:?]
-	at com.google.common.cache.LocalCache$Segment.loadSync(LocalCache.java:2424) [guava-21.0.jar:?]
-	at com.google.common.cache.LocalCache$Segment.lockedGetOrLoad(LocalCache.java:2298) [guava-21.0.jar:?]
-	at com.google.common.cache.LocalCache$Segment.get(LocalCache.java:2211) [guava-21.0.jar:?]
-	at com.google.common.cache.LocalCache.get(LocalCache.java:4154) [guava-21.0.jar:?]
-	at com.google.common.cache.LocalCache.getOrLoad(LocalCache.java:4158) [guava-21.0.jar:?]
-	at com.google.common.cache.LocalCache$LocalLoadingCache.get(LocalCache.java:5147) [guava-21.0.jar:?]
-	at com.google.common.cache.LocalCache$LocalLoadingCache.getUnchecked(LocalCache.java:5153) [guava-21.0.jar:?]
-	at com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService.fillProfileProperties(YggdrasilMinecraftSessionService.java:170) [YggdrasilMinecraftSessionService.class:?]
-	at net.minecraft.client.Minecraft.getProfileProperties(Minecraft.java:3188) [Minecraft.class:?]
-	at net.minecraft.client.resources.SkinManager$3.run(SkinManager.java:138) [SkinManager$3.class:?]
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [?:1.8.0_131]
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [?:1.8.0_131]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_131]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_131]
-	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_131]
-[21:54:25] [main/INFO]: [CHAT] lsutigers3131:ruby, lsutigers3131:ruby_block, lsutigers3131:thicksteak, minecraft:acacia_boat, minecraft:acacia_door, minecraft:acacia_fence, minecraft:acacia_fence_gate, minecraft:acacia_stairs, minecraft:activator_rail, minecraft:air, minecraft:anvil, minecraft:apple, minecraft:armor_stand, minecraft:arrow, minecraft:baked_potato, minecraft:banner, minecraft:barrier, minecraft:beacon, minecraft:bed, minecraft:bedrock, minecraft:beef, minecraft:beetroot, minecraft:beetroot_seeds, minecraft:beetroot_soup, minecraft:birch_boat, minecraft:birch_door, minecraft:birch_fence, minecraft:birch_fence_gate, minecraft:birch_stairs, minecraft:black_glazed_terracotta, minecraft:black_shulker_box, minecraft:blaze_powder, minecraft:blaze_rod, minecraft:blue_glazed_terracotta, minecraft:blue_shulker_box, minecraft:boat, minecraft:bone, minecraft:bone_block, minecraft:book, minecraft:bookshelf, minecraft:bow, minecraft:bowl, minecraft:bread, minecraft:brewing_stand, minecraft:brick, minecraft:brick_block, minecraft:brick_stairs, minecraft:brown_glazed_terracotta, minecraft:brown_mushroom, minecraft:brown_mushroom_block, minecraft:brown_shulker_box, minecraft:bucket, minecraft:cactus, minecraft:cake, minecraft:carpet, minecraft:carrot, minecraft:carrot_on_a_stick, minecraft:cauldron, minecraft:chain_command_block, minecraft:chainmail_boots, minecraft:chainmail_chestplate, minecraft:chainmail_helmet, minecraft:chainmail_leggings, minecraft:chest, minecraft:chest_minecart, minecraft:chicken, minecraft:chorus_flower, minecraft:chorus_fruit, minecraft:chorus_fruit_popped, minecraft:chorus_plant, minecraft:clay, minecraft:clay_ball, minecraft:clock, minecraft:coal, minecraft:coal_block, minecraft:coal_ore, minecraft:cobblestone, minecraft:cobblestone_wall, minecraft:command_block, minecraft:command_block_minecart, minecraft:comparator, minecraft:compass, minecraft:concrete, minecraft:concrete_powder, minecraft:cooked_beef, minecraft:cooked_chicken, minecraft:cooked_fish, minecraft:cooked_mutton, minecraft:cooked_porkchop, minecraft:cooked_rabbit, minecraft:cookie, minecraft:crafting_table, minecraft:cyan_glazed_terracotta, minecraft:cyan_shulker_box, minecraft:dark_oak_boat, minecraft:dark_oak_door, minecraft:dark_oak_fence, minecraft:dark_oak_fence_gate, minecraft:dark_oak_stairs, minecraft:daylight_detector, minecraft:deadbush, minecraft:detector_rail, minecraft:diamond, minecraft:diamond_axe, minecraft:diamond_block, minecraft:diamond_boots, minecraft:diamond_chestplate, minecraft:diamond_helmet, minecraft:diamond_hoe, minecraft:diamond_horse_armor, minecraft:diamond_leggings, minecraft:diamond_ore, minecraft:diamond_pickaxe, minecraft:diamond_shovel, minecraft:diamond_sword, minecraft:dirt, minecraft:dispenser, minecraft:double_plant, minecraft:dragon_breath, minecraft:dragon_egg, minecraft:dropper, minecraft:dye, minecraft:egg, minecraft:elytra, minecraft:emerald, minecraft:emerald_block, minecraft:emerald_ore, minecraft:enchanted_book, minecraft:enchanting_table, minecraft:end_bricks, minecraft:end_crystal, minecraft:end_portal_frame, minecraft:end_rod, minecraft:end_stone, minecraft:ender_chest, minecraft:ender_eye, minecraft:ender_pearl, minecraft:experience_bottle, minecraft:farmland, minecraft:feather, minecraft:fence, minecraft:fence_gate, minecraft:fermented_spider_eye, minecraft:filled_map, minecraft:fire_charge, minecraft:firework_charge, minecraft:fireworks, minecraft:fish, minecraft:fishing_rod, minecraft:flint, minecraft:flint_and_steel, minecraft:flower_pot, minecraft:furnace, minecraft:furnace_minecart, minecraft:ghast_tear, minecraft:glass, minecraft:glass_bottle, minecraft:glass_pane, minecraft:glowstone, minecraft:glowstone_dust, minecraft:gold_block, minecraft:gold_ingot, minecraft:gold_nugget, minecraft:gold_ore, minecraft:golden_apple, minecraft:golden_axe, minecraft:golden_boots, minecraft:golden_carrot, minecraft:golden_chestplate, minecraft:golden_helmet, minecraft:golden_hoe, minecraft:golden_horse_armor, minecraft:golden_leggings, minecraft:golden_pickaxe, minecraft:golden_rail, minecraft:golden_shovel, minecraft:golden_sword, minecraft:grass, minecraft:grass_path, minecraft:gravel, minecraft:gray_glazed_terracotta, minecraft:gray_shulker_box, minecraft:green_glazed_terracotta, minecraft:green_shulker_box, minecraft:gunpowder, minecraft:hardened_clay, minecraft:hay_block, minecraft:heavy_weighted_pressure_plate, minecraft:hopper, minecraft:hopper_minecart, minecraft:ice, minecraft:iron_axe, minecraft:iron_bars, minecraft:iron_block, minecraft:iron_boots, minecraft:iron_chestplate, minecraft:iron_door, minecraft:iron_helmet, minecraft:iron_hoe, minecraft:iron_horse_armor, minecraft:iron_ingot, minecraft:iron_leggings, minecraft:iron_nugget, minecraft:iron_ore, minecraft:iron_pickaxe, minecraft:iron_shovel, minecraft:iron_sword, minecraft:iron_trapdoor, minecraft:item_frame, minecraft:jukebox, minecraft:jungle_boat, minecraft:jungle_door, minecraft:jungle_fence, minecraft:jungle_fence_gate, minecraft:jungle_stairs, minecraft:knowledge_book, minecraft:ladder, minecraft:lapis_block, minecraft:lapis_ore, minecraft:lava_bucket, minecraft:lead, minecraft:leather, minecraft:leather_boots, minecraft:leather_chestplate, minecraft:leather_helmet, minecraft:leather_leggings, minecraft:leaves, minecraft:leaves2, minecraft:lever, minecraft:light_blue_glazed_terracotta, minecraft:light_blue_shulker_box, minecraft:light_weighted_pressure_plate, minecraft:lime_glazed_terracotta, minecraft:lime_shulker_box, minecraft:lingering_potion, minecraft:lit_pumpkin, minecraft:log, minecraft:log2, minecraft:magenta_glazed_terracotta, minecraft:magenta_shulker_box, minecraft:magma, minecraft:magma_cream, minecraft:map, minecraft:melon, minecraft:melon_block, minecraft:melon_seeds, minecraft:milk_bucket, minecraft:minecart, minecraft:mob_spawner, minecraft:monster_egg, minecraft:mossy_cobblestone, minecraft:mushroom_stew, minecraft:mutton, minecraft:mycelium, minecraft:name_tag, minecraft:nether_brick, minecraft:nether_brick_fence, minecraft:nether_brick_stairs, minecraft:nether_star, minecraft:nether_wart, minecraft:nether_wart_block, minecraft:netherbrick, minecraft:netherrack, minecraft:noteblock, minecraft:oak_stairs, minecraft:observer, minecraft:obsidian, minecraft:orange_glazed_terracotta, minecraft:orange_shulker_box, minecraft:packed_ice, minecraft:painting, minecraft:paper, minecraft:pink_glazed_terracotta, minecraft:pink_shulker_box, minecraft:piston, minecraft:planks, minecraft:poisonous_potato, minecraft:porkchop, minecraft:potato, minecraft:potion, minecraft:prismarine, minecraft:prismarine_crystals, minecraft:prismarine_shard, minecraft:pumpkin, minecraft:pumpkin_pie, minecraft:pumpkin_seeds, minecraft:purple_glazed_terracotta, minecraft:purple_shulker_box, minecraft:purpur_block, minecraft:purpur_pillar, minecraft:purpur_slab, minecraft:purpur_stairs, minecraft:quartz, minecraft:quartz_block, minecraft:quartz_ore, minecraft:quartz_stairs, minecraft:rabbit, minecraft:rabbit_foot, minecraft:rabbit_hide, minecraft:rabbit_stew, minecraft:rail, minecraft:record_11, minecraft:record_13, minecraft:record_blocks, minecraft:record_cat, minecraft:record_chirp, minecraft:record_far, minecraft:record_mall, minecraft:record_mellohi, minecraft:record_stal, minecraft:record_strad, minecraft:record_wait, minecraft:record_ward, minecraft:red_flower, minecraft:red_glazed_terracotta, minecraft:red_mushroom, minecraft:red_mushroom_block, minecraft:red_nether_brick, minecraft:red_sandstone, minecraft:red_sandstone_stairs, minecraft:red_shulker_box, minecraft:redstone, minecraft:redstone_block, minecraft:redstone_lamp, minecraft:redstone_ore, minecraft:redstone_torch, minecraft:reeds, minecraft:repeater, minecraft:repeating_command_block, minecraft:rotten_flesh, minecraft:saddle, minecraft:sand, minecraft:sandstone, minecraft:sandstone_stairs, minecraft:sapling, minecraft:sea_lantern, minecraft:shears, minecraft:shield, minecraft:shulker_shell, minecraft:sign, minecraft:silver_glazed_terracotta, minecraft:silver_shulker_box, minecraft:skull, minecraft:slime, minecraft:slime_ball, minecraft:snow, minecraft:snow_layer, minecraft:snowball, minecraft:soul_sand, minecraft:spawn_egg, minecraft:speckled_melon, minecraft:spectral_arrow, minecraft:spider_eye, minecraft:splash_potion, minecraft:sponge, minecraft:spruce_boat, minecraft:spruce_door, minecraft:spruce_fence, minecraft:spruce_fence_gate, minecraft:spruce_stairs, minecraft:stained_glass, minecraft:stained_glass_pane, minecraft:stained_hardened_clay, minecraft:stick, minecraft:sticky_piston, minecraft:stone, minecraft:stone_axe, minecraft:stone_brick_stairs, minecraft:stone_button, minecraft:stone_hoe, minecraft:stone_pickaxe, minecraft:stone_pressure_plate, minecraft:stone_shovel, minecraft:stone_slab, minecraft:stone_slab2, minecraft:stone_stairs, minecraft:stone_sword, minecraft:stonebrick, minecraft:string, minecraft:structure_block, minecraft:structure_void, minecraft:sugar, minecraft:tallgrass, minecraft:tipped_arrow, minecraft:tnt, minecraft:tnt_minecart, minecraft:torch, minecraft:totem_of_undying, minecraft:trapdoor, minecraft:trapped_chest, minecraft:tripwire_hook, minecraft:vine, minecraft:water_bucket, minecraft:waterlily, minecraft:web, minecraft:wheat, minecraft:wheat_seeds, minecraft:white_glazed_terracotta, minecraft:white_shulker_box, minecraft:wooden_axe, minecraft:wooden_button, minecraft:wooden_door, minecraft:wooden_hoe, minecraft:wooden_pickaxe, minecraft:wooden_pressure_plate, minecraft:wooden_shovel, minecraft:wooden_slab, minecraft:wooden_sword, minecraft:wool, minecraft:writable_book, minecraft:written_book, minecraft:yellow_flower, minecraft:yellow_glazed_terracotta, minecraft:yellow_shulker_box
-[21:54:26] [main/INFO]: [CHAT] lsutigers3131:ruby, lsutigers3131:ruby_block, lsutigers3131:thicksteak, minecraft:acacia_boat, minecraft:acacia_door, minecraft:acacia_fence, minecraft:acacia_fence_gate, minecraft:acacia_stairs, minecraft:activator_rail, minecraft:air, minecraft:anvil, minecraft:apple, minecraft:armor_stand, minecraft:arrow, minecraft:baked_potato, minecraft:banner, minecraft:barrier, minecraft:beacon, minecraft:bed, minecraft:bedrock, minecraft:beef, minecraft:beetroot, minecraft:beetroot_seeds, minecraft:beetroot_soup, minecraft:birch_boat, minecraft:birch_door, minecraft:birch_fence, minecraft:birch_fence_gate, minecraft:birch_stairs, minecraft:black_glazed_terracotta, minecraft:black_shulker_box, minecraft:blaze_powder, minecraft:blaze_rod, minecraft:blue_glazed_terracotta, minecraft:blue_shulker_box, minecraft:boat, minecraft:bone, minecraft:bone_block, minecraft:book, minecraft:bookshelf, minecraft:bow, minecraft:bowl, minecraft:bread, minecraft:brewing_stand, minecraft:brick, minecraft:brick_block, minecraft:brick_stairs, minecraft:brown_glazed_terracotta, minecraft:brown_mushroom, minecraft:brown_mushroom_block, minecraft:brown_shulker_box, minecraft:bucket, minecraft:cactus, minecraft:cake, minecraft:carpet, minecraft:carrot, minecraft:carrot_on_a_stick, minecraft:cauldron, minecraft:chain_command_block, minecraft:chainmail_boots, minecraft:chainmail_chestplate, minecraft:chainmail_helmet, minecraft:chainmail_leggings, minecraft:chest, minecraft:chest_minecart, minecraft:chicken, minecraft:chorus_flower, minecraft:chorus_fruit, minecraft:chorus_fruit_popped, minecraft:chorus_plant, minecraft:clay, minecraft:clay_ball, minecraft:clock, minecraft:coal, minecraft:coal_block, minecraft:coal_ore, minecraft:cobblestone, minecraft:cobblestone_wall, minecraft:command_block, minecraft:command_block_minecart, minecraft:comparator, minecraft:compass, minecraft:concrete, minecraft:concrete_powder, minecraft:cooked_beef, minecraft:cooked_chicken, minecraft:cooked_fish, minecraft:cooked_mutton, minecraft:cooked_porkchop, minecraft:cooked_rabbit, minecraft:cookie, minecraft:crafting_table, minecraft:cyan_glazed_terracotta, minecraft:cyan_shulker_box, minecraft:dark_oak_boat, minecraft:dark_oak_door, minecraft:dark_oak_fence, minecraft:dark_oak_fence_gate, minecraft:dark_oak_stairs, minecraft:daylight_detector, minecraft:deadbush, minecraft:detector_rail, minecraft:diamond, minecraft:diamond_axe, minecraft:diamond_block, minecraft:diamond_boots, minecraft:diamond_chestplate, minecraft:diamond_helmet, minecraft:diamond_hoe, minecraft:diamond_horse_armor, minecraft:diamond_leggings, minecraft:diamond_ore, minecraft:diamond_pickaxe, minecraft:diamond_shovel, minecraft:diamond_sword, minecraft:dirt, minecraft:dispenser, minecraft:double_plant, minecraft:dragon_breath, minecraft:dragon_egg, minecraft:dropper, minecraft:dye, minecraft:egg, minecraft:elytra, minecraft:emerald, minecraft:emerald_block, minecraft:emerald_ore, minecraft:enchanted_book, minecraft:enchanting_table, minecraft:end_bricks, minecraft:end_crystal, minecraft:end_portal_frame, minecraft:end_rod, minecraft:end_stone, minecraft:ender_chest, minecraft:ender_eye, minecraft:ender_pearl, minecraft:experience_bottle, minecraft:farmland, minecraft:feather, minecraft:fence, minecraft:fence_gate, minecraft:fermented_spider_eye, minecraft:filled_map, minecraft:fire_charge, minecraft:firework_charge, minecraft:fireworks, minecraft:fish, minecraft:fishing_rod, minecraft:flint, minecraft:flint_and_steel, minecraft:flower_pot, minecraft:furnace, minecraft:furnace_minecart, minecraft:ghast_tear, minecraft:glass, minecraft:glass_bottle, minecraft:glass_pane, minecraft:glowstone, minecraft:glowstone_dust, minecraft:gold_block, minecraft:gold_ingot, minecraft:gold_nugget, minecraft:gold_ore, minecraft:golden_apple, minecraft:golden_axe, minecraft:golden_boots, minecraft:golden_carrot, minecraft:golden_chestplate, minecraft:golden_helmet, minecraft:golden_hoe, minecraft:golden_horse_armor, minecraft:golden_leggings, minecraft:golden_pickaxe, minecraft:golden_rail, minecraft:golden_shovel, minecraft:golden_sword, minecraft:grass, minecraft:grass_path, minecraft:gravel, minecraft:gray_glazed_terracotta, minecraft:gray_shulker_box, minecraft:green_glazed_terracotta, minecraft:green_shulker_box, minecraft:gunpowder, minecraft:hardened_clay, minecraft:hay_block, minecraft:heavy_weighted_pressure_plate, minecraft:hopper, minecraft:hopper_minecart, minecraft:ice, minecraft:iron_axe, minecraft:iron_bars, minecraft:iron_block, minecraft:iron_boots, minecraft:iron_chestplate, minecraft:iron_door, minecraft:iron_helmet, minecraft:iron_hoe, minecraft:iron_horse_armor, minecraft:iron_ingot, minecraft:iron_leggings, minecraft:iron_nugget, minecraft:iron_ore, minecraft:iron_pickaxe, minecraft:iron_shovel, minecraft:iron_sword, minecraft:iron_trapdoor, minecraft:item_frame, minecraft:jukebox, minecraft:jungle_boat, minecraft:jungle_door, minecraft:jungle_fence, minecraft:jungle_fence_gate, minecraft:jungle_stairs, minecraft:knowledge_book, minecraft:ladder, minecraft:lapis_block, minecraft:lapis_ore, minecraft:lava_bucket, minecraft:lead, minecraft:leather, minecraft:leather_boots, minecraft:leather_chestplate, minecraft:leather_helmet, minecraft:leather_leggings, minecraft:leaves, minecraft:leaves2, minecraft:lever, minecraft:light_blue_glazed_terracotta, minecraft:light_blue_shulker_box, minecraft:light_weighted_pressure_plate, minecraft:lime_glazed_terracotta, minecraft:lime_shulker_box, minecraft:lingering_potion, minecraft:lit_pumpkin, minecraft:log, minecraft:log2, minecraft:magenta_glazed_terracotta, minecraft:magenta_shulker_box, minecraft:magma, minecraft:magma_cream, minecraft:map, minecraft:melon, minecraft:melon_block, minecraft:melon_seeds, minecraft:milk_bucket, minecraft:minecart, minecraft:mob_spawner, minecraft:monster_egg, minecraft:mossy_cobblestone, minecraft:mushroom_stew, minecraft:mutton, minecraft:mycelium, minecraft:name_tag, minecraft:nether_brick, minecraft:nether_brick_fence, minecraft:nether_brick_stairs, minecraft:nether_star, minecraft:nether_wart, minecraft:nether_wart_block, minecraft:netherbrick, minecraft:netherrack, minecraft:noteblock, minecraft:oak_stairs, minecraft:observer, minecraft:obsidian, minecraft:orange_glazed_terracotta, minecraft:orange_shulker_box, minecraft:packed_ice, minecraft:painting, minecraft:paper, minecraft:pink_glazed_terracotta, minecraft:pink_shulker_box, minecraft:piston, minecraft:planks, minecraft:poisonous_potato, minecraft:porkchop, minecraft:potato, minecraft:potion, minecraft:prismarine, minecraft:prismarine_crystals, minecraft:prismarine_shard, minecraft:pumpkin, minecraft:pumpkin_pie, minecraft:pumpkin_seeds, minecraft:purple_glazed_terracotta, minecraft:purple_shulker_box, minecraft:purpur_block, minecraft:purpur_pillar, minecraft:purpur_slab, minecraft:purpur_stairs, minecraft:quartz, minecraft:quartz_block, minecraft:quartz_ore, minecraft:quartz_stairs, minecraft:rabbit, minecraft:rabbit_foot, minecraft:rabbit_hide, minecraft:rabbit_stew, minecraft:rail, minecraft:record_11, minecraft:record_13, minecraft:record_blocks, minecraft:record_cat, minecraft:record_chirp, minecraft:record_far, minecraft:record_mall, minecraft:record_mellohi, minecraft:record_stal, minecraft:record_strad, minecraft:record_wait, minecraft:record_ward, minecraft:red_flower, minecraft:red_glazed_terracotta, minecraft:red_mushroom, minecraft:red_mushroom_block, minecraft:red_nether_brick, minecraft:red_sandstone, minecraft:red_sandstone_stairs, minecraft:red_shulker_box, minecraft:redstone, minecraft:redstone_block, minecraft:redstone_lamp, minecraft:redstone_ore, minecraft:redstone_torch, minecraft:reeds, minecraft:repeater, minecraft:repeating_command_block, minecraft:rotten_flesh, minecraft:saddle, minecraft:sand, minecraft:sandstone, minecraft:sandstone_stairs, minecraft:sapling, minecraft:sea_lantern, minecraft:shears, minecraft:shield, minecraft:shulker_shell, minecraft:sign, minecraft:silver_glazed_terracotta, minecraft:silver_shulker_box, minecraft:skull, minecraft:slime, minecraft:slime_ball, minecraft:snow, minecraft:snow_layer, minecraft:snowball, minecraft:soul_sand, minecraft:spawn_egg, minecraft:speckled_melon, minecraft:spectral_arrow, minecraft:spider_eye, minecraft:splash_potion, minecraft:sponge, minecraft:spruce_boat, minecraft:spruce_door, minecraft:spruce_fence, minecraft:spruce_fence_gate, minecraft:spruce_stairs, minecraft:stained_glass, minecraft:stained_glass_pane, minecraft:stained_hardened_clay, minecraft:stick, minecraft:sticky_piston, minecraft:stone, minecraft:stone_axe, minecraft:stone_brick_stairs, minecraft:stone_button, minecraft:stone_hoe, minecraft:stone_pickaxe, minecraft:stone_pressure_plate, minecraft:stone_shovel, minecraft:stone_slab, minecraft:stone_slab2, minecraft:stone_stairs, minecraft:stone_sword, minecraft:stonebrick, minecraft:string, minecraft:structure_block, minecraft:structure_void, minecraft:sugar, minecraft:tallgrass, minecraft:tipped_arrow, minecraft:tnt, minecraft:tnt_minecart, minecraft:torch, minecraft:totem_of_undying, minecraft:trapdoor, minecraft:trapped_chest, minecraft:tripwire_hook, minecraft:vine, minecraft:water_bucket, minecraft:waterlily, minecraft:web, minecraft:wheat, minecraft:wheat_seeds, minecraft:white_glazed_terracotta, minecraft:white_shulker_box, minecraft:wooden_axe, minecraft:wooden_button, minecraft:wooden_door, minecraft:wooden_hoe, minecraft:wooden_pickaxe, minecraft:wooden_pressure_plate, minecraft:wooden_shovel, minecraft:wooden_slab, minecraft:wooden_sword, minecraft:wool, minecraft:writable_book, minecraft:written_book, minecraft:yellow_flower, minecraft:yellow_glazed_terracotta, minecraft:yellow_shulker_box
-[21:54:27] [main/INFO]: [CHAT] lsutigers3131:ruby, lsutigers3131:ruby_block, lsutigers3131:thicksteak, minecraft:acacia_boat, minecraft:acacia_door, minecraft:acacia_fence, minecraft:acacia_fence_gate, minecraft:acacia_stairs, minecraft:activator_rail, minecraft:air, minecraft:anvil, minecraft:apple, minecraft:armor_stand, minecraft:arrow, minecraft:baked_potato, minecraft:banner, minecraft:barrier, minecraft:beacon, minecraft:bed, minecraft:bedrock, minecraft:beef, minecraft:beetroot, minecraft:beetroot_seeds, minecraft:beetroot_soup, minecraft:birch_boat, minecraft:birch_door, minecraft:birch_fence, minecraft:birch_fence_gate, minecraft:birch_stairs, minecraft:black_glazed_terracotta, minecraft:black_shulker_box, minecraft:blaze_powder, minecraft:blaze_rod, minecraft:blue_glazed_terracotta, minecraft:blue_shulker_box, minecraft:boat, minecraft:bone, minecraft:bone_block, minecraft:book, minecraft:bookshelf, minecraft:bow, minecraft:bowl, minecraft:bread, minecraft:brewing_stand, minecraft:brick, minecraft:brick_block, minecraft:brick_stairs, minecraft:brown_glazed_terracotta, minecraft:brown_mushroom, minecraft:brown_mushroom_block, minecraft:brown_shulker_box, minecraft:bucket, minecraft:cactus, minecraft:cake, minecraft:carpet, minecraft:carrot, minecraft:carrot_on_a_stick, minecraft:cauldron, minecraft:chain_command_block, minecraft:chainmail_boots, minecraft:chainmail_chestplate, minecraft:chainmail_helmet, minecraft:chainmail_leggings, minecraft:chest, minecraft:chest_minecart, minecraft:chicken, minecraft:chorus_flower, minecraft:chorus_fruit, minecraft:chorus_fruit_popped, minecraft:chorus_plant, minecraft:clay, minecraft:clay_ball, minecraft:clock, minecraft:coal, minecraft:coal_block, minecraft:coal_ore, minecraft:cobblestone, minecraft:cobblestone_wall, minecraft:command_block, minecraft:command_block_minecart, minecraft:comparator, minecraft:compass, minecraft:concrete, minecraft:concrete_powder, minecraft:cooked_beef, minecraft:cooked_chicken, minecraft:cooked_fish, minecraft:cooked_mutton, minecraft:cooked_porkchop, minecraft:cooked_rabbit, minecraft:cookie, minecraft:crafting_table, minecraft:cyan_glazed_terracotta, minecraft:cyan_shulker_box, minecraft:dark_oak_boat, minecraft:dark_oak_door, minecraft:dark_oak_fence, minecraft:dark_oak_fence_gate, minecraft:dark_oak_stairs, minecraft:daylight_detector, minecraft:deadbush, minecraft:detector_rail, minecraft:diamond, minecraft:diamond_axe, minecraft:diamond_block, minecraft:diamond_boots, minecraft:diamond_chestplate, minecraft:diamond_helmet, minecraft:diamond_hoe, minecraft:diamond_horse_armor, minecraft:diamond_leggings, minecraft:diamond_ore, minecraft:diamond_pickaxe, minecraft:diamond_shovel, minecraft:diamond_sword, minecraft:dirt, minecraft:dispenser, minecraft:double_plant, minecraft:dragon_breath, minecraft:dragon_egg, minecraft:dropper, minecraft:dye, minecraft:egg, minecraft:elytra, minecraft:emerald, minecraft:emerald_block, minecraft:emerald_ore, minecraft:enchanted_book, minecraft:enchanting_table, minecraft:end_bricks, minecraft:end_crystal, minecraft:end_portal_frame, minecraft:end_rod, minecraft:end_stone, minecraft:ender_chest, minecraft:ender_eye, minecraft:ender_pearl, minecraft:experience_bottle, minecraft:farmland, minecraft:feather, minecraft:fence, minecraft:fence_gate, minecraft:fermented_spider_eye, minecraft:filled_map, minecraft:fire_charge, minecraft:firework_charge, minecraft:fireworks, minecraft:fish, minecraft:fishing_rod, minecraft:flint, minecraft:flint_and_steel, minecraft:flower_pot, minecraft:furnace, minecraft:furnace_minecart, minecraft:ghast_tear, minecraft:glass, minecraft:glass_bottle, minecraft:glass_pane, minecraft:glowstone, minecraft:glowstone_dust, minecraft:gold_block, minecraft:gold_ingot, minecraft:gold_nugget, minecraft:gold_ore, minecraft:golden_apple, minecraft:golden_axe, minecraft:golden_boots, minecraft:golden_carrot, minecraft:golden_chestplate, minecraft:golden_helmet, minecraft:golden_hoe, minecraft:golden_horse_armor, minecraft:golden_leggings, minecraft:golden_pickaxe, minecraft:golden_rail, minecraft:golden_shovel, minecraft:golden_sword, minecraft:grass, minecraft:grass_path, minecraft:gravel, minecraft:gray_glazed_terracotta, minecraft:gray_shulker_box, minecraft:green_glazed_terracotta, minecraft:green_shulker_box, minecraft:gunpowder, minecraft:hardened_clay, minecraft:hay_block, minecraft:heavy_weighted_pressure_plate, minecraft:hopper, minecraft:hopper_minecart, minecraft:ice, minecraft:iron_axe, minecraft:iron_bars, minecraft:iron_block, minecraft:iron_boots, minecraft:iron_chestplate, minecraft:iron_door, minecraft:iron_helmet, minecraft:iron_hoe, minecraft:iron_horse_armor, minecraft:iron_ingot, minecraft:iron_leggings, minecraft:iron_nugget, minecraft:iron_ore, minecraft:iron_pickaxe, minecraft:iron_shovel, minecraft:iron_sword, minecraft:iron_trapdoor, minecraft:item_frame, minecraft:jukebox, minecraft:jungle_boat, minecraft:jungle_door, minecraft:jungle_fence, minecraft:jungle_fence_gate, minecraft:jungle_stairs, minecraft:knowledge_book, minecraft:ladder, minecraft:lapis_block, minecraft:lapis_ore, minecraft:lava_bucket, minecraft:lead, minecraft:leather, minecraft:leather_boots, minecraft:leather_chestplate, minecraft:leather_helmet, minecraft:leather_leggings, minecraft:leaves, minecraft:leaves2, minecraft:lever, minecraft:light_blue_glazed_terracotta, minecraft:light_blue_shulker_box, minecraft:light_weighted_pressure_plate, minecraft:lime_glazed_terracotta, minecraft:lime_shulker_box, minecraft:lingering_potion, minecraft:lit_pumpkin, minecraft:log, minecraft:log2, minecraft:magenta_glazed_terracotta, minecraft:magenta_shulker_box, minecraft:magma, minecraft:magma_cream, minecraft:map, minecraft:melon, minecraft:melon_block, minecraft:melon_seeds, minecraft:milk_bucket, minecraft:minecart, minecraft:mob_spawner, minecraft:monster_egg, minecraft:mossy_cobblestone, minecraft:mushroom_stew, minecraft:mutton, minecraft:mycelium, minecraft:name_tag, minecraft:nether_brick, minecraft:nether_brick_fence, minecraft:nether_brick_stairs, minecraft:nether_star, minecraft:nether_wart, minecraft:nether_wart_block, minecraft:netherbrick, minecraft:netherrack, minecraft:noteblock, minecraft:oak_stairs, minecraft:observer, minecraft:obsidian, minecraft:orange_glazed_terracotta, minecraft:orange_shulker_box, minecraft:packed_ice, minecraft:painting, minecraft:paper, minecraft:pink_glazed_terracotta, minecraft:pink_shulker_box, minecraft:piston, minecraft:planks, minecraft:poisonous_potato, minecraft:porkchop, minecraft:potato, minecraft:potion, minecraft:prismarine, minecraft:prismarine_crystals, minecraft:prismarine_shard, minecraft:pumpkin, minecraft:pumpkin_pie, minecraft:pumpkin_seeds, minecraft:purple_glazed_terracotta, minecraft:purple_shulker_box, minecraft:purpur_block, minecraft:purpur_pillar, minecraft:purpur_slab, minecraft:purpur_stairs, minecraft:quartz, minecraft:quartz_block, minecraft:quartz_ore, minecraft:quartz_stairs, minecraft:rabbit, minecraft:rabbit_foot, minecraft:rabbit_hide, minecraft:rabbit_stew, minecraft:rail, minecraft:record_11, minecraft:record_13, minecraft:record_blocks, minecraft:record_cat, minecraft:record_chirp, minecraft:record_far, minecraft:record_mall, minecraft:record_mellohi, minecraft:record_stal, minecraft:record_strad, minecraft:record_wait, minecraft:record_ward, minecraft:red_flower, minecraft:red_glazed_terracotta, minecraft:red_mushroom, minecraft:red_mushroom_block, minecraft:red_nether_brick, minecraft:red_sandstone, minecraft:red_sandstone_stairs, minecraft:red_shulker_box, minecraft:redstone, minecraft:redstone_block, minecraft:redstone_lamp, minecraft:redstone_ore, minecraft:redstone_torch, minecraft:reeds, minecraft:repeater, minecraft:repeating_command_block, minecraft:rotten_flesh, minecraft:saddle, minecraft:sand, minecraft:sandstone, minecraft:sandstone_stairs, minecraft:sapling, minecraft:sea_lantern, minecraft:shears, minecraft:shield, minecraft:shulker_shell, minecraft:sign, minecraft:silver_glazed_terracotta, minecraft:silver_shulker_box, minecraft:skull, minecraft:slime, minecraft:slime_ball, minecraft:snow, minecraft:snow_layer, minecraft:snowball, minecraft:soul_sand, minecraft:spawn_egg, minecraft:speckled_melon, minecraft:spectral_arrow, minecraft:spider_eye, minecraft:splash_potion, minecraft:sponge, minecraft:spruce_boat, minecraft:spruce_door, minecraft:spruce_fence, minecraft:spruce_fence_gate, minecraft:spruce_stairs, minecraft:stained_glass, minecraft:stained_glass_pane, minecraft:stained_hardened_clay, minecraft:stick, minecraft:sticky_piston, minecraft:stone, minecraft:stone_axe, minecraft:stone_brick_stairs, minecraft:stone_button, minecraft:stone_hoe, minecraft:stone_pickaxe, minecraft:stone_pressure_plate, minecraft:stone_shovel, minecraft:stone_slab, minecraft:stone_slab2, minecraft:stone_stairs, minecraft:stone_sword, minecraft:stonebrick, minecraft:string, minecraft:structure_block, minecraft:structure_void, minecraft:sugar, minecraft:tallgrass, minecraft:tipped_arrow, minecraft:tnt, minecraft:tnt_minecart, minecraft:torch, minecraft:totem_of_undying, minecraft:trapdoor, minecraft:trapped_chest, minecraft:tripwire_hook, minecraft:vine, minecraft:water_bucket, minecraft:waterlily, minecraft:web, minecraft:wheat, minecraft:wheat_seeds, minecraft:white_glazed_terracotta, minecraft:white_shulker_box, minecraft:wooden_axe, minecraft:wooden_button, minecraft:wooden_door, minecraft:wooden_hoe, minecraft:wooden_pickaxe, minecraft:wooden_pressure_plate, minecraft:wooden_shovel, minecraft:wooden_slab, minecraft:wooden_sword, minecraft:wool, minecraft:writable_book, minecraft:written_book, minecraft:yellow_flower, minecraft:yellow_glazed_terracotta, minecraft:yellow_shulker_box
-[21:54:28] [Server thread/INFO]: [Player230: Given [item.thicksteak.name] * 1 to Player230]
-[21:54:28] [main/INFO]: [CHAT] Given [item.thicksteak.name] * 1 to Player230
-[21:54:36] [main/INFO]: [CHAT] lsutigers3131:ruby, lsutigers3131:ruby_block, lsutigers3131:thicksteak
-[21:54:37] [main/INFO]: [CHAT] lsutigers3131:ruby, lsutigers3131:ruby_block, lsutigers3131:thicksteak
-[21:54:39] [Server thread/INFO]: [Player230: Given [tile.ruby_block.name] * 1 to Player230]
-[21:54:39] [main/INFO]: [CHAT] Given [tile.ruby_block.name] * 1 to Player230
-[21:54:51] [Server thread/INFO]: Saving and pausing game...
-[21:54:51] [Server thread/INFO]: Saving chunks for level 'New World'/overworld
-[21:54:51] [Server thread/INFO]: Saving chunks for level 'New World'/the_nether
-[21:54:51] [Server thread/INFO]: Saving chunks for level 'New World'/the_end
-[21:58:45] [Server thread/INFO]: Loaded 488 advancements
-[21:58:45] [Server thread/INFO]: [Player230: Successfully reloaded loot tables, advancements and functions]
-[21:58:45] [main/INFO]: [CHAT] Successfully reloaded loot tables, advancements and functions
-[21:58:46] [Server thread/INFO]: Saving and pausing game...
-[21:58:46] [Server thread/INFO]: Saving chunks for level 'New World'/overworld
-[21:58:46] [Server thread/INFO]: Saving chunks for level 'New World'/the_nether
-[21:58:46] [Server thread/INFO]: Saving chunks for level 'New World'/the_end
-[21:58:47] [Server thread/INFO]: Stopping server
-[21:58:47] [Server thread/INFO]: Saving players
-[21:58:47] [Server thread/INFO]: Player230 lost connection: Disconnected
-[21:58:47] [Server thread/INFO]: Player230 left the game
-[21:58:47] [Server thread/INFO]: Stopping singleplayer server as player logged out
-[21:58:47] [Server thread/INFO]: Saving worlds
-[21:58:47] [Server thread/INFO]: Saving chunks for level 'New World'/overworld
-[21:58:47] [Server thread/INFO]: Saving chunks for level 'New World'/the_nether
-[21:58:47] [Server thread/INFO]: Saving chunks for level 'New World'/the_end
+[16:27:35] [main/INFO] [GradleStart]: Extra: []
+[16:27:35] [main/INFO] [GradleStart]: Running with arguments: [--userProperties, {}, --assetsDir, C:/Users/Daniel/.gradle/caches/minecraft/assets, --assetIndex, 1.12, --accessToken{REDACTED}, --version, 1.12.2, --tweakClass, net.minecraftforge.fml.common.launcher.FMLTweaker, --tweakClass, net.minecraftforge.gradle.tweakers.CoremodTweaker]
+[16:27:35] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.fml.common.launcher.FMLTweaker
+[16:27:35] [main/INFO] [LaunchWrapper]: Using primary tweak class name net.minecraftforge.fml.common.launcher.FMLTweaker
+[16:27:35] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.gradle.tweakers.CoremodTweaker
+[16:27:35] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLTweaker
+[16:27:35] [main/INFO] [FML]: Forge Mod Loader version 14.23.5.2768 for Minecraft 1.12.2 loading
+[16:27:35] [main/INFO] [FML]: Java is Java HotSpot(TM) 64-Bit Server VM, version 1.8.0_221, running on Windows 10:amd64:10.0, installed at C:\Program Files\Java\jre1.8.0_221
+[16:27:35] [main/ERROR] [FML]: Apache Maven library folder was not in the format expected. Using default libraries directory.
+[16:27:35] [main/ERROR] [FML]: Full: C:\Users\Daniel\.gradle\caches\modules-2\files-2.1\org.apache.maven\maven-artifact\3.5.3\7dc72b6d6d8a6dced3d294ed54c2cc3515ade9f4\maven-artifact-3.5.3.jar
+[16:27:35] [main/ERROR] [FML]: Trimmed: c:/users/daniel/.gradle/caches/modules-2/files-2.1/org.apache.maven/maven-artifact/3.5.3/
+[16:27:35] [main/INFO] [FML]: Managed to load a deobfuscated Minecraft name- we are in a deobfuscated environment. Skipping runtime deobfuscation
+[16:27:35] [main/INFO] [FML]: Detected deobfuscated environment, loading log configs for colored console logs.
+[16:27:36] [main/INFO] [FML]: Ignoring missing certificate for coremod FMLCorePlugin (net.minecraftforge.fml.relauncher.FMLCorePlugin), we are in deobf and it's a forge core plugin
+[16:27:36] [main/INFO] [FML]: Ignoring missing certificate for coremod FMLForgePlugin (net.minecraftforge.classloading.FMLForgePlugin), we are in deobf and it's a forge core plugin
+[16:27:36] [main/INFO] [FML]: Searching C:\Users\Daniel\Documents\Programming\Forge\Minecraft-Forge-1.12\run\.\mods for mods
+[16:27:36] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.gradle.tweakers.CoremodTweaker
+[16:27:36] [main/INFO] [GradleStart]: Injecting location in coremod net.minecraftforge.fml.relauncher.FMLCorePlugin
+[16:27:36] [main/INFO] [GradleStart]: Injecting location in coremod net.minecraftforge.classloading.FMLForgePlugin
+[16:27:36] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.fml.common.launcher.FMLInjectionAndSortingTweaker
+[16:27:36] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.fml.common.launcher.FMLDeobfTweaker
+[16:27:36] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.gradle.tweakers.AccessTransformerTweaker
+[16:27:36] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLInjectionAndSortingTweaker
+[16:27:36] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLInjectionAndSortingTweaker
+[16:27:36] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.relauncher.CoreModManager$FMLPluginWrapper
+[16:27:41] [main/ERROR] [FML]: FML appears to be missing any signature data. This is not a good thing
+[16:27:41] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.relauncher.CoreModManager$FMLPluginWrapper
+[16:27:41] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLDeobfTweaker
+[16:27:41] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.gradle.tweakers.AccessTransformerTweaker
+[16:27:41] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.fml.common.launcher.TerminalTweaker
+[16:27:41] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.TerminalTweaker
+[16:27:41] [main/INFO] [LaunchWrapper]: Launching wrapped minecraft {net.minecraft.client.main.Main}
+[16:27:42] [main/INFO] [net.minecraft.client.Minecraft]: Setting user: Player602
+[16:27:46] [main/WARN] [net.minecraft.client.settings.GameSettings]: Skipping bad option: lastServer:
+[16:27:46] [main/INFO] [net.minecraft.client.Minecraft]: LWJGL Version: 2.9.4
+[16:27:47] [main/INFO] [FML]: -- System Details --
+Details:
+	Minecraft Version: 1.12.2
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 1.8.0_221, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 45203584 bytes (43 MB) / 317718528 bytes (303 MB) up to 1892155392 bytes (1804 MB)
+	JVM Flags: 0 total; 
+	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
+	FML: 
+	Loaded coremods (and transformers): 
+	GL info: ' Vendor: 'NVIDIA Corporation' Version: '4.6.0 NVIDIA 436.15' Renderer: 'GeForce GTX 1060 3GB/PCIe/SSE2'
+[16:27:47] [main/INFO] [FML]: MinecraftForge v14.23.5.2768 Initialized
+[16:27:47] [main/INFO] [FML]: Starts to replace vanilla recipe ingredients with ore ingredients.
+[16:27:48] [main/INFO] [FML]: Replaced 1036 ore ingredients
+[16:27:48] [main/INFO] [FML]: Searching C:\Users\Daniel\Documents\Programming\Forge\Minecraft-Forge-1.12\run\.\mods for mods
+[16:27:48] [main/ERROR] [FML]: Unable to construct net.minecraftforge.fml.common.Mod container
+java.lang.reflect.InvocationTargetException: null
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:1.8.0_221]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source) ~[?:1.8.0_221]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source) ~[?:1.8.0_221]
+	at java.lang.reflect.Constructor.newInstance(Unknown Source) ~[?:1.8.0_221]
+	at net.minecraftforge.fml.common.ModContainerFactory.build(ModContainerFactory.java:73) [ModContainerFactory.class:?]
+	at net.minecraftforge.fml.common.discovery.DirectoryDiscoverer.exploreFileSystem(DirectoryDiscoverer.java:135) [DirectoryDiscoverer.class:?]
+	at net.minecraftforge.fml.common.discovery.DirectoryDiscoverer.exploreFileSystem(DirectoryDiscoverer.java:104) [DirectoryDiscoverer.class:?]
+	at net.minecraftforge.fml.common.discovery.DirectoryDiscoverer.exploreFileSystem(DirectoryDiscoverer.java:104) [DirectoryDiscoverer.class:?]
+	at net.minecraftforge.fml.common.discovery.DirectoryDiscoverer.exploreFileSystem(DirectoryDiscoverer.java:104) [DirectoryDiscoverer.class:?]
+	at net.minecraftforge.fml.common.discovery.DirectoryDiscoverer.discover(DirectoryDiscoverer.java:62) [DirectoryDiscoverer.class:?]
+	at net.minecraftforge.fml.common.discovery.ContainerType.findMods(ContainerType.java:47) [ContainerType.class:?]
+	at net.minecraftforge.fml.common.discovery.ModCandidate.explore(ModCandidate.java:74) [ModCandidate.class:?]
+	at net.minecraftforge.fml.common.discovery.ModDiscoverer.identifyMods(ModDiscoverer.java:93) [ModDiscoverer.class:?]
+	at net.minecraftforge.fml.common.Loader.identifyMods(Loader.java:425) [Loader.class:?]
+	at net.minecraftforge.fml.common.Loader.loadMods(Loader.java:566) [Loader.class:?]
+	at net.minecraftforge.fml.client.FMLClientHandler.beginMinecraftLoading(FMLClientHandler.java:232) [FMLClientHandler.class:?]
+	at net.minecraft.client.Minecraft.init(Minecraft.java:513) [Minecraft.class:?]
+	at net.minecraft.client.Minecraft.run(Minecraft.java:421) [Minecraft.class:?]
+	at net.minecraft.client.main.Main.main(Main.java:118) [Main.class:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_221]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[?:1.8.0_221]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[?:1.8.0_221]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[?:1.8.0_221]
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135) [launchwrapper-1.12.jar:?]
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28) [launchwrapper-1.12.jar:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_221]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[?:1.8.0_221]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[?:1.8.0_221]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[?:1.8.0_221]
+	at net.minecraftforge.gradle.GradleStartCommon.launch(GradleStartCommon.java:97) [start/:?]
+	at GradleStart.main(GradleStart.java:25) [start/:?]
+Caused by: java.lang.IllegalArgumentException: The modId is null or empty
+	at net.minecraftforge.fml.common.FMLModContainer.sanityCheckModId(FMLModContainer.java:138) ~[FMLModContainer.class:?]
+	at net.minecraftforge.fml.common.FMLModContainer.<init>(FMLModContainer.java:130) ~[FMLModContainer.class:?]
+	... 31 more
+[16:27:48] [main/ERROR] [FML]: Unable to construct net.minecraftforge.fml.common.Mod container
+java.lang.reflect.InvocationTargetException: null
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:1.8.0_221]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source) ~[?:1.8.0_221]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source) ~[?:1.8.0_221]
+	at java.lang.reflect.Constructor.newInstance(Unknown Source) ~[?:1.8.0_221]
+	at net.minecraftforge.fml.common.ModContainerFactory.build(ModContainerFactory.java:73) [ModContainerFactory.class:?]
+	at net.minecraftforge.fml.common.discovery.DirectoryDiscoverer.exploreFileSystem(DirectoryDiscoverer.java:135) [DirectoryDiscoverer.class:?]
+	at net.minecraftforge.fml.common.discovery.DirectoryDiscoverer.exploreFileSystem(DirectoryDiscoverer.java:104) [DirectoryDiscoverer.class:?]
+	at net.minecraftforge.fml.common.discovery.DirectoryDiscoverer.exploreFileSystem(DirectoryDiscoverer.java:104) [DirectoryDiscoverer.class:?]
+	at net.minecraftforge.fml.common.discovery.DirectoryDiscoverer.exploreFileSystem(DirectoryDiscoverer.java:104) [DirectoryDiscoverer.class:?]
+	at net.minecraftforge.fml.common.discovery.DirectoryDiscoverer.discover(DirectoryDiscoverer.java:62) [DirectoryDiscoverer.class:?]
+	at net.minecraftforge.fml.common.discovery.ContainerType.findMods(ContainerType.java:47) [ContainerType.class:?]
+	at net.minecraftforge.fml.common.discovery.ModCandidate.explore(ModCandidate.java:74) [ModCandidate.class:?]
+	at net.minecraftforge.fml.common.discovery.ModDiscoverer.identifyMods(ModDiscoverer.java:93) [ModDiscoverer.class:?]
+	at net.minecraftforge.fml.common.Loader.identifyMods(Loader.java:425) [Loader.class:?]
+	at net.minecraftforge.fml.common.Loader.loadMods(Loader.java:566) [Loader.class:?]
+	at net.minecraftforge.fml.client.FMLClientHandler.beginMinecraftLoading(FMLClientHandler.java:232) [FMLClientHandler.class:?]
+	at net.minecraft.client.Minecraft.init(Minecraft.java:513) [Minecraft.class:?]
+	at net.minecraft.client.Minecraft.run(Minecraft.java:421) [Minecraft.class:?]
+	at net.minecraft.client.main.Main.main(Main.java:118) [Main.class:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_221]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[?:1.8.0_221]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[?:1.8.0_221]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[?:1.8.0_221]
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135) [launchwrapper-1.12.jar:?]
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28) [launchwrapper-1.12.jar:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_221]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[?:1.8.0_221]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[?:1.8.0_221]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[?:1.8.0_221]
+	at net.minecraftforge.gradle.GradleStartCommon.launch(GradleStartCommon.java:97) [start/:?]
+	at GradleStart.main(GradleStart.java:25) [start/:?]
+Caused by: java.lang.IllegalArgumentException: The modId is null or empty
+	at net.minecraftforge.fml.common.FMLModContainer.sanityCheckModId(FMLModContainer.java:138) ~[FMLModContainer.class:?]
+	at net.minecraftforge.fml.common.FMLModContainer.<init>(FMLModContainer.java:130) ~[FMLModContainer.class:?]
+	... 31 more
+[16:27:48] [main/ERROR] [FML]: Unable to construct net.minecraftforge.fml.common.Mod container
+java.lang.reflect.InvocationTargetException: null
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:1.8.0_221]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source) ~[?:1.8.0_221]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source) ~[?:1.8.0_221]
+	at java.lang.reflect.Constructor.newInstance(Unknown Source) ~[?:1.8.0_221]
+	at net.minecraftforge.fml.common.ModContainerFactory.build(ModContainerFactory.java:73) [ModContainerFactory.class:?]
+	at net.minecraftforge.fml.common.discovery.DirectoryDiscoverer.exploreFileSystem(DirectoryDiscoverer.java:135) [DirectoryDiscoverer.class:?]
+	at net.minecraftforge.fml.common.discovery.DirectoryDiscoverer.exploreFileSystem(DirectoryDiscoverer.java:104) [DirectoryDiscoverer.class:?]
+	at net.minecraftforge.fml.common.discovery.DirectoryDiscoverer.exploreFileSystem(DirectoryDiscoverer.java:104) [DirectoryDiscoverer.class:?]
+	at net.minecraftforge.fml.common.discovery.DirectoryDiscoverer.exploreFileSystem(DirectoryDiscoverer.java:104) [DirectoryDiscoverer.class:?]
+	at net.minecraftforge.fml.common.discovery.DirectoryDiscoverer.exploreFileSystem(DirectoryDiscoverer.java:104) [DirectoryDiscoverer.class:?]
+	at net.minecraftforge.fml.common.discovery.DirectoryDiscoverer.discover(DirectoryDiscoverer.java:62) [DirectoryDiscoverer.class:?]
+	at net.minecraftforge.fml.common.discovery.ContainerType.findMods(ContainerType.java:47) [ContainerType.class:?]
+	at net.minecraftforge.fml.common.discovery.ModCandidate.explore(ModCandidate.java:74) [ModCandidate.class:?]
+	at net.minecraftforge.fml.common.discovery.ModDiscoverer.identifyMods(ModDiscoverer.java:93) [ModDiscoverer.class:?]
+	at net.minecraftforge.fml.common.Loader.identifyMods(Loader.java:425) [Loader.class:?]
+	at net.minecraftforge.fml.common.Loader.loadMods(Loader.java:566) [Loader.class:?]
+	at net.minecraftforge.fml.client.FMLClientHandler.beginMinecraftLoading(FMLClientHandler.java:232) [FMLClientHandler.class:?]
+	at net.minecraft.client.Minecraft.init(Minecraft.java:513) [Minecraft.class:?]
+	at net.minecraft.client.Minecraft.run(Minecraft.java:421) [Minecraft.class:?]
+	at net.minecraft.client.main.Main.main(Main.java:118) [Main.class:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_221]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[?:1.8.0_221]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[?:1.8.0_221]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[?:1.8.0_221]
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135) [launchwrapper-1.12.jar:?]
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28) [launchwrapper-1.12.jar:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_221]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[?:1.8.0_221]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[?:1.8.0_221]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[?:1.8.0_221]
+	at net.minecraftforge.gradle.GradleStartCommon.launch(GradleStartCommon.java:97) [start/:?]
+	at GradleStart.main(GradleStart.java:25) [start/:?]
+Caused by: java.lang.IllegalArgumentException: The modId is null or empty
+	at net.minecraftforge.fml.common.FMLModContainer.sanityCheckModId(FMLModContainer.java:138) ~[FMLModContainer.class:?]
+	at net.minecraftforge.fml.common.FMLModContainer.<init>(FMLModContainer.java:130) ~[FMLModContainer.class:?]
+	... 32 more
+[16:27:48] [main/ERROR] [FML]: Unable to construct net.minecraftforge.fml.common.Mod container
+java.lang.reflect.InvocationTargetException: null
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:1.8.0_221]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source) ~[?:1.8.0_221]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source) ~[?:1.8.0_221]
+	at java.lang.reflect.Constructor.newInstance(Unknown Source) ~[?:1.8.0_221]
+	at net.minecraftforge.fml.common.ModContainerFactory.build(ModContainerFactory.java:73) [ModContainerFactory.class:?]
+	at net.minecraftforge.fml.common.discovery.DirectoryDiscoverer.exploreFileSystem(DirectoryDiscoverer.java:135) [DirectoryDiscoverer.class:?]
+	at net.minecraftforge.fml.common.discovery.DirectoryDiscoverer.exploreFileSystem(DirectoryDiscoverer.java:104) [DirectoryDiscoverer.class:?]
+	at net.minecraftforge.fml.common.discovery.DirectoryDiscoverer.exploreFileSystem(DirectoryDiscoverer.java:104) [DirectoryDiscoverer.class:?]
+	at net.minecraftforge.fml.common.discovery.DirectoryDiscoverer.exploreFileSystem(DirectoryDiscoverer.java:104) [DirectoryDiscoverer.class:?]
+	at net.minecraftforge.fml.common.discovery.DirectoryDiscoverer.exploreFileSystem(DirectoryDiscoverer.java:104) [DirectoryDiscoverer.class:?]
+	at net.minecraftforge.fml.common.discovery.DirectoryDiscoverer.discover(DirectoryDiscoverer.java:62) [DirectoryDiscoverer.class:?]
+	at net.minecraftforge.fml.common.discovery.ContainerType.findMods(ContainerType.java:47) [ContainerType.class:?]
+	at net.minecraftforge.fml.common.discovery.ModCandidate.explore(ModCandidate.java:74) [ModCandidate.class:?]
+	at net.minecraftforge.fml.common.discovery.ModDiscoverer.identifyMods(ModDiscoverer.java:93) [ModDiscoverer.class:?]
+	at net.minecraftforge.fml.common.Loader.identifyMods(Loader.java:425) [Loader.class:?]
+	at net.minecraftforge.fml.common.Loader.loadMods(Loader.java:566) [Loader.class:?]
+	at net.minecraftforge.fml.client.FMLClientHandler.beginMinecraftLoading(FMLClientHandler.java:232) [FMLClientHandler.class:?]
+	at net.minecraft.client.Minecraft.init(Minecraft.java:513) [Minecraft.class:?]
+	at net.minecraft.client.Minecraft.run(Minecraft.java:421) [Minecraft.class:?]
+	at net.minecraft.client.main.Main.main(Main.java:118) [Main.class:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_221]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[?:1.8.0_221]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[?:1.8.0_221]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[?:1.8.0_221]
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135) [launchwrapper-1.12.jar:?]
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28) [launchwrapper-1.12.jar:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_221]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[?:1.8.0_221]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[?:1.8.0_221]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[?:1.8.0_221]
+	at net.minecraftforge.gradle.GradleStartCommon.launch(GradleStartCommon.java:97) [start/:?]
+	at GradleStart.main(GradleStart.java:25) [start/:?]
+Caused by: java.lang.IllegalArgumentException: The modId is null or empty
+	at net.minecraftforge.fml.common.FMLModContainer.sanityCheckModId(FMLModContainer.java:138) ~[FMLModContainer.class:?]
+	at net.minecraftforge.fml.common.FMLModContainer.<init>(FMLModContainer.java:130) ~[FMLModContainer.class:?]
+	... 32 more
+[16:27:49] [main/INFO] [FML]: Forge Mod Loader has identified 5 mods to load
+[16:27:50] [main/INFO] [FML]: Attempting connection with missing mods [minecraft, mcp, FML, forge, lsutigers3131] at CLIENT
+[16:27:50] [main/INFO] [FML]: Attempting connection with missing mods [minecraft, mcp, FML, forge, lsutigers3131] at SERVER
+[16:27:50] [Thread-3/INFO] [FML]: Using sync timing. 200 frames of Display.update took 104793000 nanos
+[16:27:50] [main/INFO] [net.minecraft.client.resources.SimpleReloadableResourceManager]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Daniel's First Mod
+[16:27:51] [main/INFO] [STDOUT]: [net.minecraft.init.Bootstrap:printToSYSOUT:629]: ---- Minecraft Crash Report ----
+// Why did you do that?
+
+Time: 10/6/19 4:27 PM
+Description: Initializing game
+
+java.lang.NoClassDefFoundError: FMLInitializationEvent
+	at java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.lang.Class.privateGetDeclaredMethods(Unknown Source)
+	at java.lang.Class.getDeclaredMethods(Unknown Source)
+	at net.minecraftforge.fml.common.FMLModContainer.gatherAnnotations(FMLModContainer.java:389)
+	at net.minecraftforge.fml.common.FMLModContainer.constructMod(FMLModContainer.java:584)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at com.google.common.eventbus.Subscriber.invokeSubscriberMethod(Subscriber.java:91)
+	at com.google.common.eventbus.Subscriber$SynchronizedSubscriber.invokeSubscriberMethod(Subscriber.java:150)
+	at com.google.common.eventbus.Subscriber$1.run(Subscriber.java:76)
+	at com.google.common.util.concurrent.MoreExecutors$DirectExecutor.execute(MoreExecutors.java:399)
+	at com.google.common.eventbus.Subscriber.dispatchEvent(Subscriber.java:71)
+	at com.google.common.eventbus.Dispatcher$PerThreadQueuedDispatcher.dispatch(Dispatcher.java:116)
+	at com.google.common.eventbus.EventBus.post(EventBus.java:217)
+	at net.minecraftforge.fml.common.LoadController.sendEventToModContainer(LoadController.java:218)
+	at net.minecraftforge.fml.common.LoadController.propogateStateMessage(LoadController.java:196)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at com.google.common.eventbus.Subscriber.invokeSubscriberMethod(Subscriber.java:91)
+	at com.google.common.eventbus.Subscriber$SynchronizedSubscriber.invokeSubscriberMethod(Subscriber.java:150)
+	at com.google.common.eventbus.Subscriber$1.run(Subscriber.java:76)
+	at com.google.common.util.concurrent.MoreExecutors$DirectExecutor.execute(MoreExecutors.java:399)
+	at com.google.common.eventbus.Subscriber.dispatchEvent(Subscriber.java:71)
+	at com.google.common.eventbus.Dispatcher$PerThreadQueuedDispatcher.dispatch(Dispatcher.java:116)
+	at com.google.common.eventbus.EventBus.post(EventBus.java:217)
+	at net.minecraftforge.fml.common.LoadController.distributeStateMessage(LoadController.java:135)
+	at net.minecraftforge.fml.common.Loader.loadMods(Loader.java:593)
+	at net.minecraftforge.fml.client.FMLClientHandler.beginMinecraftLoading(FMLClientHandler.java:232)
+	at net.minecraft.client.Minecraft.init(Minecraft.java:513)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:421)
+	at net.minecraft.client.main.Main.main(Main.java:118)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at net.minecraftforge.gradle.GradleStartCommon.launch(GradleStartCommon.java:97)
+	at GradleStart.main(GradleStart.java:25)
+Caused by: java.lang.ClassNotFoundException: FMLInitializationEvent
+	at net.minecraft.launchwrapper.LaunchClassLoader.findClass(LaunchClassLoader.java:191)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	... 47 more
+Caused by: java.lang.NullPointerException
+	at net.minecraft.launchwrapper.LaunchClassLoader.findClass(LaunchClassLoader.java:182)
+	... 49 more
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Client thread
+Stacktrace:
+	at java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.lang.Class.privateGetDeclaredMethods(Unknown Source)
+	at java.lang.Class.getDeclaredMethods(Unknown Source)
+	at net.minecraftforge.fml.common.FMLModContainer.gatherAnnotations(FMLModContainer.java:389)
+	at net.minecraftforge.fml.common.FMLModContainer.constructMod(FMLModContainer.java:584)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at com.google.common.eventbus.Subscriber.invokeSubscriberMethod(Subscriber.java:91)
+	at com.google.common.eventbus.Subscriber$SynchronizedSubscriber.invokeSubscriberMethod(Subscriber.java:150)
+	at com.google.common.eventbus.Subscriber$1.run(Subscriber.java:76)
+	at com.google.common.util.concurrent.MoreExecutors$DirectExecutor.execute(MoreExecutors.java:399)
+	at com.google.common.eventbus.Subscriber.dispatchEvent(Subscriber.java:71)
+	at com.google.common.eventbus.Dispatcher$PerThreadQueuedDispatcher.dispatch(Dispatcher.java:116)
+	at com.google.common.eventbus.EventBus.post(EventBus.java:217)
+	at net.minecraftforge.fml.common.LoadController.sendEventToModContainer(LoadController.java:218)
+	at net.minecraftforge.fml.common.LoadController.propogateStateMessage(LoadController.java:196)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at com.google.common.eventbus.Subscriber.invokeSubscriberMethod(Subscriber.java:91)
+	at com.google.common.eventbus.Subscriber$SynchronizedSubscriber.invokeSubscriberMethod(Subscriber.java:150)
+	at com.google.common.eventbus.Subscriber$1.run(Subscriber.java:76)
+	at com.google.common.util.concurrent.MoreExecutors$DirectExecutor.execute(MoreExecutors.java:399)
+	at com.google.common.eventbus.Subscriber.dispatchEvent(Subscriber.java:71)
+	at com.google.common.eventbus.Dispatcher$PerThreadQueuedDispatcher.dispatch(Dispatcher.java:116)
+	at com.google.common.eventbus.EventBus.post(EventBus.java:217)
+	at net.minecraftforge.fml.common.LoadController.distributeStateMessage(LoadController.java:135)
+	at net.minecraftforge.fml.common.Loader.loadMods(Loader.java:593)
+	at net.minecraftforge.fml.client.FMLClientHandler.beginMinecraftLoading(FMLClientHandler.java:232)
+	at net.minecraft.client.Minecraft.init(Minecraft.java:513)
+
+-- Initialization --
+Details:
+Stacktrace:
+	at net.minecraft.client.Minecraft.run(Minecraft.java:421)
+	at net.minecraft.client.main.Main.main(Main.java:118)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at net.minecraftforge.gradle.GradleStartCommon.launch(GradleStartCommon.java:97)
+	at GradleStart.main(GradleStart.java:25)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.12.2
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 1.8.0_221, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 131112520 bytes (125 MB) / 449839104 bytes (429 MB) up to 1892155392 bytes (1804 MB)
+	JVM Flags: 0 total; 
+	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
+	FML: MCP 9.42 Powered by Forge 14.23.5.2768 5 mods loaded, 5 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+
+	| State | ID            | Version      | Source                           | Signature |
+	|:----- |:------------- |:------------ |:-------------------------------- |:--------- |
+	| UC    | minecraft     | 1.12.2       | minecraft.jar                    | None      |
+	| UC    | mcp           | 9.42         | minecraft.jar                    | None      |
+	| UC    | FML           | 8.0.99.99    | forgeSrc-1.12.2-14.23.5.2768.jar | None      |
+	| UC    | forge         | 14.23.5.2768 | forgeSrc-1.12.2-14.23.5.2768.jar | None      |
+	| U     | lsutigers3131 | 1.0          | bin                              | None      |
+
+	Loaded coremods (and transformers): 
+	GL info: ' Vendor: 'NVIDIA Corporation' Version: '4.6.0 NVIDIA 436.15' Renderer: 'GeForce GTX 1060 3GB/PCIe/SSE2'
+	Launched Version: 1.12.2
+	LWJGL: 2.9.4
+	OpenGL: GeForce GTX 1060 3GB/PCIe/SSE2 GL version 4.6.0 NVIDIA 436.15, NVIDIA Corporation
+	GL Caps: Using GL 1.3 multitexturing.
+Using GL 1.3 texture combiners.
+Using framebuffer objects because OpenGL 3.0 is supported and separate blending is supported.
+Shaders are available because OpenGL 2.1 is supported.
+VBOs are available because OpenGL 1.5 is supported.
+
+	Using VBOs: Yes
+	Is Modded: Definitely; Client brand changed to 'fml,forge'
+	Type: Client (map_client.txt)
+	Resource Packs: 
+	Current Language: English (US)
+	Profiler Position: N/A (disabled)
+	CPU: 6x Intel(R) Core(TM) i5-8400 CPU @ 2.80GHz
+[16:27:51] [main/INFO] [STDOUT]: [net.minecraft.init.Bootstrap:printToSYSOUT:629]: #@!@# Game crashed! Crash report saved to: #@!@# C:\Users\Daniel\Documents\Programming\Forge\Minecraft-Forge-1.12\run\.\crash-reports\crash-2019-10-06_16.27.51-client.txt

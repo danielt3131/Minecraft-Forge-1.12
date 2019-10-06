@@ -148,6 +148,7 @@ public class BlockFire extends Block
     {
         if (worldIn.getGameRules().getBoolean("doFireTick"))
         {
+            if (!worldIn.isAreaLoaded(pos, 2)) return; // Forge: prevent loading unloaded chunks when spreading fire
             if (!this.canPlaceBlockAt(worldIn, pos))
             {
                 worldIn.setBlockToAir(pos);

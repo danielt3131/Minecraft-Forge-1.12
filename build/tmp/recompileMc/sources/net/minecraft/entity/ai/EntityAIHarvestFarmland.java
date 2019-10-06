@@ -34,7 +34,7 @@ public class EntityAIHarvestFarmland extends EntityAIMoveToBlock
     {
         if (this.runDelay <= 0)
         {
-            if (!this.villager.world.getGameRules().getBoolean("mobGriefing"))
+            if (!net.minecraftforge.event.ForgeEventFactory.getMobGriefingEvent(this.villager.world, this.villager))
             {
                 return false;
             }
@@ -104,6 +104,12 @@ public class EntityAIHarvestFarmland extends EntityAIMoveToBlock
                         {
                             world.setBlockState(blockpos, Blocks.BEETROOTS.getDefaultState(), 3);
                             flag = true;
+                        }
+                        else if (itemstack.getItem() instanceof net.minecraftforge.common.IPlantable) {
+                            if(((net.minecraftforge.common.IPlantable)itemstack.getItem()).getPlantType(world,blockpos) == net.minecraftforge.common.EnumPlantType.Crop) {
+                                world.setBlockState(blockpos, ((net.minecraftforge.common.IPlantable)itemstack.getItem()).getPlant(world,blockpos),3);
+                                flag = true;
+                            }
                         }
                     }
 

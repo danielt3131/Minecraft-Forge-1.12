@@ -139,7 +139,7 @@ public class RenderItem implements IResourceManagerReloadListener
             {
                 GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
                 GlStateManager.enableRescaleNormal();
-                TileEntityItemStackRenderer.instance.renderByItem(stack);
+                stack.getItem().getTileEntityItemStackRenderer().renderByItem(stack);
             }
             else
             {
@@ -357,6 +357,7 @@ public class RenderItem implements IResourceManagerReloadListener
                         return String.valueOf((Object)p_184391_2_.getItem());
                     }
                 });
+                crashreportcategory.addDetail("Registry Name", () -> String.valueOf(p_184391_2_.getItem().getRegistryName()));
                 crashreportcategory.addDetail("Item Aux", new ICrashReportDetail<String>()
                 {
                     public String call() throws Exception

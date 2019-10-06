@@ -291,8 +291,8 @@ public class Particle
         {
             this.width = p_187115_1_;
             this.height = p_187115_2_;
-            AxisAlignedBB axisalignedbb = this.getBoundingBox();
-            this.setBoundingBox(new AxisAlignedBB(axisalignedbb.minX, axisalignedbb.minY, axisalignedbb.minZ, axisalignedbb.minX + (double)this.width, axisalignedbb.minY + (double)this.height, axisalignedbb.minZ + (double)this.width));
+            // FORGE: Fix MC-12269 - Glitchy movement when setSize is called without setPosition
+            setPosition(posX, posY, posZ);
         }
     }
 

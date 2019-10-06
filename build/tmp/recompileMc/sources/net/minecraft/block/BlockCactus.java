@@ -36,6 +36,7 @@ public class BlockCactus extends Block implements net.minecraftforge.common.IPla
 
     public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand)
     {
+        if (!worldIn.isAreaLoaded(pos, 1)) return; // Forge: prevent growing cactus from loading unloaded chunks with block update
         BlockPos blockpos = pos.up();
 
         if (worldIn.isAirBlock(blockpos))

@@ -1,0 +1,157 @@
+Processing 16 files
+Start Processing: com/LSUtigers3131/mod/Main.java
+Rename field net/minecraft/init/Items/COOKED_BEEF[1406,1417]::COOKED_BEEF->field_151083_be
+Import: com.LSUtigers3131.mod.Reference
+Import: com.LSUtigers3131.mod.items.ModItems
+Import: com.LSUtigers3131.mod.proxy.CommonProxy
+Import: com.LSUtigers3131.mod.tabs.Daniel
+Import: net.minecraft.creativetab.CreativeTabs
+Import: net.minecraft.init.Items
+Import: net.minecraft.item.ItemStack
+Import: net.minecraftforge.fml.common.Mod
+Import: net.minecraftforge.fml.common.Mod.EventHandler
+Import: net.minecraftforge.fml.common.Mod.Instance
+Import: net.minecraftforge.fml.common.SidedProxy
+Import: net.minecraftforge.fml.common.event.FMLInitializationEvent
+Import: net.minecraftforge.fml.common.event.FMLPostInitializationEvent
+Import: net.minecraftforge.fml.common.event.FMLPreInitializationEvent
+Import: net.minecraftforge.fml.common.registry.GameRegistry
+End  Processing: com/LSUtigers3131/mod/Main.java
+
+Start Processing: com/LSUtigers3131/mod/Reference.java
+End  Processing: com/LSUtigers3131/mod/Reference.java
+
+Start Processing: com/LSUtigers3131/mod/blocks/BasketballBlock.java
+FOUND CONSTR method com/LSUtigers3131/mod/blocks/BasketballBlock/BasketballBlock (Ljava/lang/String;Lnet/minecraft/block/material/Material;)V com/LSUtigers3131/mod/blocks/BasketballBlock
+Rename method net/minecraft/block/Block/setBlockUnbreakable ()Lnet/minecraft/block/Block;[275,294]::setBlockUnbreakable->func_149722_s
+Rename method net/minecraft/block/Block/setSoundType (Lnet/minecraft/block/SoundType;)Lnet/minecraft/block/Block;[328,340]::setSoundType->func_149672_a
+Rename field net/minecraft/block/SoundType/ANVIL[352,357]::ANVIL->field_185858_k
+Import: net.minecraft.block.SoundType
+Import: net.minecraft.block.material.Material
+End  Processing: com/LSUtigers3131/mod/blocks/BasketballBlock.java
+
+Start Processing: com/LSUtigers3131/mod/blocks/BasketballGoalBlock.java
+FOUND CONSTR method com/LSUtigers3131/mod/blocks/BasketballGoalBlock/BasketballGoalBlock (Ljava/lang/String;Lnet/minecraft/block/material/Material;)V com/LSUtigers3131/mod/blocks/BasketballGoalBlock
+Rename method net/minecraft/block/Block/setSoundType (Lnet/minecraft/block/SoundType;)Lnet/minecraft/block/Block;[276,288]::setSoundType->func_149672_a
+Rename field net/minecraft/block/SoundType/METAL[300,305]::METAL->field_185852_e
+Rename method net/minecraft/block/Block/setLightLevel (F)Lnet/minecraft/block/Block;[320,333]::setLightLevel->func_149715_a
+Rename method net/minecraft/block/Block/setLightOpacity (I)Lnet/minecraft/block/Block;[344,359]::setLightOpacity->func_149713_g
+Rename method net/minecraft/block/Block/setHardness (F)Lnet/minecraft/block/Block;[365,376]::setHardness->func_149711_c
+Rename method net/minecraft/block/Block/setResistance (F)Lnet/minecraft/block/Block;[389,402]::setResistance->func_149752_b
+Import: net.minecraft.block.SoundType
+Import: net.minecraft.block.material.Material
+End  Processing: com/LSUtigers3131/mod/blocks/BasketballGoalBlock.java
+
+Start Processing: com/LSUtigers3131/mod/blocks/BlockBase.java
+FOUND CONSTR method com/LSUtigers3131/mod/blocks/BlockBase/BlockBase (Ljava/lang/String;Lnet/minecraft/block/material/Material;)V com/LSUtigers3131/mod/blocks/BlockBase
+Rename method net/minecraft/block/Block/setUnlocalizedName (Ljava/lang/String;)Lnet/minecraft/block/Block;[513,531]::setUnlocalizedName->func_149663_c
+Rename method net/minecraft/block/Block/setCreativeTab (Lnet/minecraft/creativetab/CreativeTabs;)Lnet/minecraft/block/Block;[563,577]::setCreativeTab->func_149647_a
+Rename method net/minecraft/item/Item/getItemFromBlock (Lnet/minecraft/block/Block;)Lnet/minecraft/item/Item;[804,820]::getItemFromBlock->func_150898_a
+Import: com.LSUtigers3131.mod.Main
+Import: com.LSUtigers3131.mod.items.IHasModel
+Import: com.LSUtigers3131.mod.items.ModItems
+Import: net.minecraft.block.Block
+Import: net.minecraft.block.material.Material
+Import: net.minecraft.creativetab.CreativeTabs
+Import: net.minecraft.item.Item
+Import: net.minecraft.item.ItemBlock
+End  Processing: com/LSUtigers3131/mod/blocks/BlockBase.java
+
+Start Processing: com/LSUtigers3131/mod/blocks/LightBlock.java
+FOUND CONSTR method com/LSUtigers3131/mod/blocks/LightBlock/LightBlock (Ljava/lang/String;Lnet/minecraft/block/material/Material;)V com/LSUtigers3131/mod/blocks/LightBlock
+Rename method net/minecraft/block/Block/setSoundType (Lnet/minecraft/block/SoundType;)Lnet/minecraft/block/Block;[309,321]::setSoundType->func_149672_a
+Rename field net/minecraft/block/SoundType/METAL[333,338]::METAL->field_185852_e
+Rename method net/minecraft/block/Block/setLightLevel (F)Lnet/minecraft/block/Block;[353,366]::setLightLevel->func_149715_a
+Rename method net/minecraft/block/Block/setLightOpacity (I)Lnet/minecraft/block/Block;[377,392]::setLightOpacity->func_149713_g
+Rename method net/minecraft/block/Block/setHardness (F)Lnet/minecraft/block/Block;[399,410]::setHardness->func_149711_c
+Rename method net/minecraft/block/Block/setResistance (F)Lnet/minecraft/block/Block;[423,436]::setResistance->func_149752_b
+Import: net.minecraft.block.SoundType
+Import: net.minecraft.block.material.Material
+Import: net.minecraft.creativetab.CreativeTabs
+End  Processing: com/LSUtigers3131/mod/blocks/LightBlock.java
+
+Start Processing: com/LSUtigers3131/mod/blocks/ModBlocks.java
+Rename field net/minecraft/block/material/Material/IRON[542,546]::IRON->field_151573_f
+Rename field net/minecraft/block/material/Material/IRON[640,644]::IRON->field_151573_f
+Rename field net/minecraft/block/material/Material/IRON[767,771]::IRON->field_151573_f
+Rename field net/minecraft/block/material/Material/IRON[880,884]::IRON->field_151573_f
+Import: java.util.ArrayList
+Import: java.util.List
+Adding 2 imports
+        net.minecraft.block.Block
+        net.minecraft.block.material.Material
+End  Processing: com/LSUtigers3131/mod/blocks/ModBlocks.java
+
+Start Processing: com/LSUtigers3131/mod/blocks/RubyBlock.java
+FOUND CONSTR method com/LSUtigers3131/mod/blocks/RubyBlock/RubyBlock (Ljava/lang/String;Lnet/minecraft/block/material/Material;)V com/LSUtigers3131/mod/blocks/RubyBlock
+Rename method net/minecraft/block/Block/setSoundType (Lnet/minecraft/block/SoundType;)Lnet/minecraft/block/Block;[260,272]::setSoundType->func_149672_a
+Rename field net/minecraft/block/SoundType/METAL[284,289]::METAL->field_185852_e
+Rename method net/minecraft/block/Block/setLightLevel (F)Lnet/minecraft/block/Block;[304,317]::setLightLevel->func_149715_a
+Rename method net/minecraft/block/Block/setHardness (F)Lnet/minecraft/block/Block;[328,339]::setHardness->func_149711_c
+Rename method net/minecraft/block/Block/setResistance (F)Lnet/minecraft/block/Block;[352,365]::setResistance->func_149752_b
+Import: net.minecraft.block.SoundType
+Import: net.minecraft.block.material.Material
+End  Processing: com/LSUtigers3131/mod/blocks/RubyBlock.java
+
+Start Processing: com/LSUtigers3131/mod/handlers/RegistryHandler.java
+New Key: class net/minecraftforge/event/RegistryEvent
+New Key: class net/minecraftforge/event/RegistryEvent
+Import: com.LSUtigers3131.mod.blocks.ModBlocks
+Import: com.LSUtigers3131.mod.items.IHasModel
+Import: com.LSUtigers3131.mod.items.ModItems
+Adding 6 imports
+        net.minecraft.block.Block
+        net.minecraft.item.Item
+        net.minecraftforge.client.event.ModelRegistryEvent
+        net.minecraftforge.event.RegistryEvent
+        net.minecraftforge.fml.common.Mod.EventBusSubscriber
+        net.minecraftforge.fml.common.eventhandler.SubscribeEvent
+End  Processing: com/LSUtigers3131/mod/handlers/RegistryHandler.java
+
+Start Processing: com/LSUtigers3131/mod/items/IHasModel.java
+End  Processing: com/LSUtigers3131/mod/items/IHasModel.java
+
+Start Processing: com/LSUtigers3131/mod/items/ItemBase.java
+FOUND CONSTR method com/LSUtigers3131/mod/items/ItemBase/ItemBase (Ljava/lang/String;)V com/LSUtigers3131/mod/items/ItemBase
+Rename method net/minecraft/item/Item/setUnlocalizedName (Ljava/lang/String;)Lnet/minecraft/item/Item;[303,321]::setUnlocalizedName->func_77655_b
+Rename method net/minecraft/item/Item/setCreativeTab (Lnet/minecraft/creativetab/CreativeTabs;)Lnet/minecraft/item/Item;[352,366]::setCreativeTab->func_77637_a
+Import: com.LSUtigers3131.mod.Main
+Import: com.LSUtigers3131.mod.items.IHasModel
+Import: net.minecraft.creativetab.CreativeTabs
+Import: net.minecraft.item.Item
+End  Processing: com/LSUtigers3131/mod/items/ItemBase.java
+
+Start Processing: com/LSUtigers3131/mod/items/ItemThickSteak.java
+FOUND CONSTR method com/LSUtigers3131/mod/items/ItemThickSteak/ItemThickSteak ()V com/LSUtigers3131/mod/items/ItemThickSteak
+Rename method net/minecraft/item/Item/setUnlocalizedName (Ljava/lang/String;)Lnet/minecraft/item/Item;[325,343]::setUnlocalizedName->func_77655_b
+Rename method net/minecraft/item/Item/setCreativeTab (Lnet/minecraft/creativetab/CreativeTabs;)Lnet/minecraft/item/Item;[390,404]::setCreativeTab->func_77637_a
+Import: com.LSUtigers3131.mod.Main
+Adding 1 imports
+        net.minecraft.item.ItemFood
+End  Processing: com/LSUtigers3131/mod/items/ItemThickSteak.java
+
+Start Processing: com/LSUtigers3131/mod/items/ModItems.java
+Import: java.util.ArrayList
+Import: java.util.List
+Import: net.minecraft.item.Item
+End  Processing: com/LSUtigers3131/mod/items/ModItems.java
+
+Start Processing: com/LSUtigers3131/mod/proxy/ClientProxy.java
+Import: net.minecraft.client.renderer.block.model.ModelResourceLocation
+Import: net.minecraft.item.Item
+Import: net.minecraftforge.client.model.ModelLoader
+End  Processing: com/LSUtigers3131/mod/proxy/ClientProxy.java
+
+Start Processing: com/LSUtigers3131/mod/proxy/CommonProxy.java
+Import: net.minecraft.item.Item
+End  Processing: com/LSUtigers3131/mod/proxy/CommonProxy.java
+
+Start Processing: com/LSUtigers3131/mod/tabs/Daniel.java
+FOUND CONSTR method com/LSUtigers3131/mod/tabs/Daniel/Daniel (Ljava/lang/String;)V com/LSUtigers3131/mod/tabs/Daniel
+Rename method net/minecraft/creativetab/CreativeTabs/getTabIconItem ()Lnet/minecraft/item/ItemStack;[312,326]::getTabIconItem->func_78016_d
+Import: com.LSUtigers3131.mod.items.ModItems
+Adding 2 imports
+        net.minecraft.creativetab.CreativeTabs
+        net.minecraft.item.ItemStack
+End  Processing: com/LSUtigers3131/mod/tabs/Daniel.java
+

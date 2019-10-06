@@ -4,7 +4,6 @@ import com.LSUtigers3131.mod.Reference;
 import com.LSUtigers3131.mod.items.ModItems;
 import com.LSUtigers3131.mod.proxy.CommonProxy;
 import com.LSUtigers3131.mod.tabs.Daniel;
-
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;

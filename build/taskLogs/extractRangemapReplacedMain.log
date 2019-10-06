@@ -1,0 +1,52 @@
+Unsupposrted library path: C:\Users\Daniel\Documents\Programming\Forge\Minecraft-Forge-1.12\build\classes\api
+Unsupposrted library path: C:\Users\Daniel\Documents\Programming\Forge\Minecraft-Forge-1.12\build\resources\api
+Symbol range map extraction starting
+Processing 16 files
+startProcessing "com/LSUtigers3131/mod/Main.java" md5: 55c9511de04ee2b7e9fcb230c7bc2b2f
+endProcessing "com/LSUtigers3131/mod/Main.java"
+
+startProcessing "com/LSUtigers3131/mod/Reference.java" md5: 748ab4016c4018cc58f775974c337257
+endProcessing "com/LSUtigers3131/mod/Reference.java"
+
+startProcessing "com/LSUtigers3131/mod/blocks/BasketballBlock.java" md5: 76b0d080b885deebcc52a17a50fac172
+endProcessing "com/LSUtigers3131/mod/blocks/BasketballBlock.java"
+
+startProcessing "com/LSUtigers3131/mod/blocks/BasketballGoalBlock.java" md5: 30b478ad8f3940b34fdde8bca0a9fd2a
+endProcessing "com/LSUtigers3131/mod/blocks/BasketballGoalBlock.java"
+
+startProcessing "com/LSUtigers3131/mod/blocks/BlockBase.java" md5: 54b163401b1b019ba4922586c157e9ed
+endProcessing "com/LSUtigers3131/mod/blocks/BlockBase.java"
+
+startProcessing "com/LSUtigers3131/mod/blocks/LightBlock.java" md5: 6b82bbb4e7ae0e4d9cd568bc7a10cb8a
+endProcessing "com/LSUtigers3131/mod/blocks/LightBlock.java"
+
+startProcessing "com/LSUtigers3131/mod/blocks/ModBlocks.java" md5: aef75874aebb0bc843271d675f40f975
+endProcessing "com/LSUtigers3131/mod/blocks/ModBlocks.java"
+
+startProcessing "com/LSUtigers3131/mod/blocks/RubyBlock.java" md5: e17f6ab423aeb3806c00d0c1ff422c55
+endProcessing "com/LSUtigers3131/mod/blocks/RubyBlock.java"
+
+startProcessing "com/LSUtigers3131/mod/handlers/RegistryHandler.java" md5: 78ba6c606aa497dff0f3f82ddc3f2c43
+endProcessing "com/LSUtigers3131/mod/handlers/RegistryHandler.java"
+
+startProcessing "com/LSUtigers3131/mod/items/IHasModel.java" md5: d00b7ac5cf9671bfb0e947b3c409475d
+endProcessing "com/LSUtigers3131/mod/items/IHasModel.java"
+
+startProcessing "com/LSUtigers3131/mod/items/ItemBase.java" md5: 40bac7eed23610ed00b36550c5c28d10
+endProcessing "com/LSUtigers3131/mod/items/ItemBase.java"
+
+startProcessing "com/LSUtigers3131/mod/items/ItemThickSteak.java" md5: 9cc8dedc4e9e94bc59c459281c3f0943
+endProcessing "com/LSUtigers3131/mod/items/ItemThickSteak.java"
+
+startProcessing "com/LSUtigers3131/mod/items/ModItems.java" md5: 02041819288b113df9ca45efc5e35a10
+endProcessing "com/LSUtigers3131/mod/items/ModItems.java"
+
+startProcessing "com/LSUtigers3131/mod/proxy/ClientProxy.java" md5: 32b5f919eacbe9618d575b9fd4e4df2b
+endProcessing "com/LSUtigers3131/mod/proxy/ClientProxy.java"
+
+startProcessing "com/LSUtigers3131/mod/proxy/CommonProxy.java" md5: 03d783dc170e87ae68b7bab723473669
+endProcessing "com/LSUtigers3131/mod/proxy/CommonProxy.java"
+
+startProcessing "com/LSUtigers3131/mod/tabs/Daniel.java" md5: df9474315c724f1c41b42c01606e30d2
+endProcessing "com/LSUtigers3131/mod/tabs/Daniel.java"
+
